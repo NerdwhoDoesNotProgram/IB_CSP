@@ -3,7 +3,7 @@
 
 name = "Billy"
 
-name_s = "Billy's"
+name_s = "Billy's" # just for better flow in the sentence
 
 number = 8
 
