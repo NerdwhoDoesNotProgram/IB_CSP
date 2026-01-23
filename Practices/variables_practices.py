@@ -24,4 +24,4 @@ age = 15
 fav_school_subject = "Geography"
 
 
-print(name, "chose the number", number, "and", big_number, ". They had", breakfast, "for breakfast before going to,", school_name, "for the", year, "year of school.", name_s, "favorite subject is", fav_school_subject, "." , name_s, "favorite color is", fav_color, ", which matches his", eye_color, "eyes")
+print(name, "chose the number", number, "and", big_number, ". He had", breakfast, "for breakfast before going to,", school_name, "for the", year, "year of school.", name_s, "favorite subject is", fav_school_subject, "." , name_s, "favorite color is", fav_color, ", which matches his", eye_color, "eyes")
