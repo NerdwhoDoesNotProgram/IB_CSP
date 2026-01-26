@@ -16,13 +16,13 @@ spending = float(income-rent-utilities-groceries-transportation-savings)
 
 
 
-print("Your rent is $", rent, "and that is", int((rent/income)*100), "%","of your income")
+print("Your rent is $", rent, "and that is", round(int((rent/income)*100)), "%","of your income")
 
-print("Your utilities are $", utilities,"and that is", int((utilities/income)*100), "%", "of your income")
+print("Your utilities are $", utilities,"and that is", round(int((utilities/income)*100)), "%", "of your income")
 
-print("Your Groceries are $", groceries, "and that is", int((groceries/income)*100), "%", "of your income")
+print("Your Groceries are $", groceries, "and that is", round(int((groceries/income)*100)), "%", "of your income")
 
-print("Your Transportation is $", transportation, "and that is", int((transportation/income)*100), "of your income")
+print("Your Transportation is $", transportation, "and that is", round(int((transportation/income)*100)), "of your income")
 
 print("You should save $", savings,"a month, and that is 10 % of your income" )
 
