@@ -1,6 +1,6 @@
 # IB Finacial Calculator - Python
 
-income = round(float(input("What is your monthly income: $ ")),2)
+income = round(float(input("What is your monthly income: $ ")), 2)
 
 rent = round(float(input("What is your monthly rent/mortgage: $ ")), 2)
 
