@@ -1,29 +1,33 @@
 # IB Finacial Calculator - Python
 
-income = float(input("How much do you make monthly: $ "))
+income = round(float(input("What is your monthly income: $ ")),2)
 
-rent = float(input("How much is your rent per month: $ "))
+rent = round(float(input("What is your monthly rent/mortgage: $ ")), 2)
 
-utilities = float(input("How much is your utilities: $ "))
+utilities = round(float(input("What are your monthly utilities: $ ")), 2)
 
-groceries = float(input("How much do you pay for groceries: $ "))
+groceries = round(float(input("What is your monthly groceries: $ ")), 2)
 
-transportation = float(input("How much do you pay for transportation: $ "))
+transportation = round(float(input("What is your monthly transportation: $")), 2)
 
-savings = float(income*0.10)
+percent = round(float(input("What percentage of your income would you like to save? (Exclude the percentage symbol) It is recomended 10% and higher: ")), 2)
 
-spending = float(income-rent-utilities-groceries-transportation-savings)
+percent_of_savings = percent/100
+
+savings = round(float(income*percent_of_savings), 2)
+
+spending = round(float(income-rent-utilities-groceries-transportation-savings), 2)
 
 
 
-print("Your rent is $", rent, "and that is", round(int((rent/income)*100)), "%","of your income")
+print("Your rent is $", rent, "and that is", round((rent/income)*100), "%","of your income")
 
-print("Your utilities are $", utilities,"and that is", round(int((utilities/income)*100)), "%", "of your income")
+print("Your utilities are $", utilities,"and that is", round((utilities/income)*100), "%", "of your income")
 
-print("Your Groceries are $", groceries, "and that is", round(int((groceries/income)*100)), "%", "of your income")
+print("Your Groceries are $", groceries, "and that is", round((groceries/income)*100), "%", "of your income")
 
-print("Your Transportation is $", transportation, "and that is", round(int((transportation/income)*100)), "of your income")
+print("Your Transportation is $", transportation, "and that is", round((transportation/income)*100), "% of your income")
 
-print("You should save $", savings,"a month, and that is 10 % of your income" )
+print("You should save $", savings,"a month, and that is", int(percent), "% of your income" )
 
 print("You have $", spending, "of sepending money each month!")
