@@ -26,6 +26,7 @@ def determine_winner(player, computer):
 
 def weird_round(player_input):
     unstoppable = ["black hole", "angry teacher"]
+    playerlose = ["computer"]
     weird_items = [
         "flying banana",
         "haunted sock",
@@ -33,19 +34,64 @@ def weird_round(player_input):
         "homework monster"
     ]
 
+    # Jokes for losing by typing "computer"
+    computer_jokes = [
+        "You lost so badly that your code didn’t just return False—it created a new boolean value called Pathetic and then force-quit out of embarrassment.",
+        "You lost so badly that when the code checked if (playerWon), the computer laughed so hard it caused a system crash.",
+        "You lost so badly that you couldn’t pass a 'Hello World' test. The computer replied: 'Goodbye World.'",
+        "You lost so badly that I ran git blame on your move and the computer pointed at your chair.",
+        "You lost so badly that your strategy caused a memory leak—we’re losing brain cells watching this."
+    ]
+
+    # ----- INSTANT GAME LOSS (COMPUTER TEAMS UP) -----
+    if player_input in playerlose:
+        print("\nYou played: computer")
+        print("The computer has finally met its match...")
+        print("You tie")
+        for i in range(5):
+            print("tie")
+            time.sleep(0.3)
+
+        print("\nOr do you?")
+        print("The computers synchronize their processors.")
+        print("They turn toward you.")
+
+        # PRINT RANDOM JOKE HERE
+        print("\n" + random.choice(computer_jokes))
+
+        return "game_over_computer"
+
+
     # ----- NUMBER INPUT -----
     if player_input.isdigit():
-        computer_number = int(player_input) * 1_000_000
+        computer_number = int(player_input) * 1_560_041_234_345
         print("You played the number:", player_input)
         print("Computer played the number:", computer_number)
         print("The computer's number is impossibly larger.")
         return "computer"
+    
+
+   # ----- COMPUTER VS COMPUTER -----
+  #  if player_input in playerlose:
+   #     print("\nYou played: computer")
+   #     print("The computer has finally met its match...")
+   #     for i in range(5):
+   #         print("You tie")
+   #         time.sleep(0.2)
+   #     print(
+   #         "\nOr do you?\n"
+    #        "The computers synchronize their processors.\n"
+     #       "They turn toward you.\n"
+      #      "You never stood a chance. You lost so badly..."
+       # )
+        #return "game_over_computer
 
     # Computer chooses from weird + unstoppable options
     computer_choice = random.choice(unstoppable + weird_items)
 
     print("You played:", player_input)
     print("Computer played:", computer_choice)
+
 
     # ----- BLACK HOLE VS BLACK HOLE -----
     if player_input == "black hole" and computer_choice == "black hole":
@@ -73,7 +119,7 @@ def weird_round(player_input):
         print("THE PROGRAM CANNOT HANDLE THIS MUCH AUTHORITY.\n")
 
         # Fake crash by spamming errors
-        for i in range(10):
+        for i in range(40):
             print("ERROR: TOO MUCH POWER")
             time.sleep(0.1)
 
@@ -139,6 +185,7 @@ while play_again == "yes":
             else:
                 print("It's a tie!")
 
+
         else:
             used_weird = True
             result = weird_round(player_choice)
@@ -147,6 +194,10 @@ while play_again == "yes":
                 player_score += 1
             elif result == "computer":
                 computer_score += 1
+            elif result == "game_over_computer":
+                computer_score = 3
+
+
 
         print()
 
