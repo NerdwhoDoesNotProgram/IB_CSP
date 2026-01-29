@@ -42,4 +42,3 @@ elif choice == "1":
 else: 
     print("You chose " + choice + ", which wasn’t even an option. You know, after " + number1, "hours of staring at this code, I’m " + verb + " to think that", punctuation_mark, "on line", number2, "has better judgment than both of us.")
 
-    
