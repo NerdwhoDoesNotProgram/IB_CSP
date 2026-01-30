@@ -15,7 +15,9 @@ else:
 
 print("End of the program")"""
 
-name = input("What is your name: ").strip().capitalize()
+
+
+"""name = input("What is your name: ").strip().capitalize()
 
 if name == "Arthur":
     print("Welcome King Arthur.")
@@ -26,4 +28,9 @@ if name == "Arthur":
         print(f"{quest} is a lame quest. Get Good.")
 
 else:
-    print(f"Hello {name}!")
+    print(f"Hello {name}!")"""
+
+
+num = 10
+sign = "positive" if num >= 0 else "negative"
+print(f"The number is {sign}.")
