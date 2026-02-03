@@ -3,21 +3,21 @@
 import random # Library code that someone else wrote; always imort at the top
 
 # Counts down from 18
-"""start = 18
+start = 18
 
 while start >= 1:
     print(start)
     start -= 2
-"""
+
 
 # Duck Duck Goose
-"""goose = random.randint(1,20)
+goose = random.randint(1,20)
 count = 1
 
 while count < goose:
     print("Duck")
     count += 1
-print("GOOSE!")"""
+print("GOOSE!")
 
 
 # Random number guessing game
