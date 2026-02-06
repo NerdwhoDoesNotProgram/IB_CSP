@@ -47,7 +47,7 @@ def show_instructions():
     print("===================================")
     print("Commands:")
     print(" north / south / east / west")
-    print(" look")
+    # print(" look")
     print(" inventory")
     print(" map")
     print(" drop")
@@ -168,7 +168,7 @@ def potion_shop():
         return
 
 
-    buy = input("Buy potion? (yes/no): ").lower()
+    buy = input("Buy potion? (yes/no): ").lower().strip()
 
     if buy == "yes":
 
@@ -207,7 +207,7 @@ def open_chest(room):
 
         print("Inventory full.")
 
-        drop = input("Drop item? (yes/no): ").lower()
+        drop = input("Drop item? (yes/no): ").lower().strip()
 
         if drop != "yes":
             return
@@ -409,7 +409,7 @@ def main():
 
             print("\nGAME OVER 💀")
 
-            again = input("Play again? ").lower()
+            again = input("Play again? ").lower().strip()
 
             if again == "yes":
                 reset_game()
@@ -433,7 +433,7 @@ def main():
 
             if win:
 
-                again = input("Play again? ").lower()
+                again = input("Play again? ").lower().strip()
 
                 if again == "yes":
                     reset_game()
@@ -442,7 +442,7 @@ def main():
                     break
 
 
-        command = input("\nWhat do you do? ").lower()
+        command = input("\nWhat do you do? ").lower().strip()
 
         moved = False
 
