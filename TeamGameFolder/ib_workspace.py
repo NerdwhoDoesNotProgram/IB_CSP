@@ -1,4 +1,4 @@
-# Adventure RPG Game - Improved Version
+# IB GLG, 7th period, Adventure RPG Game - Improved Version
 
 import random
 
@@ -57,12 +57,12 @@ def show_instructions():
 
 
 # -----------------------------------
-# MAP
+# MAP prints a simple map showing where you are. IB wrote the code.
 # -----------------------------------
 
 def show_map():
 
-    pos = current_room
+    pos = current_room # position is pos
 
 
     def mark(room):
@@ -75,9 +75,9 @@ def show_map():
 
     print(f" [C{mark('cave')}]---[T{mark('temple')}]")
     print("   |")
-    print(f" [F{mark('forest')}]---[R{mark('river')}]")
+    print(f" [F{mark('forest')}]---[💰R{mark('river')}]")
 
-    print("\nLegend: X = You")
+    print("\nLegend: \nX = You \nC = cave \nT = Temple \nF = forest \nR = river \n💰 = potion shop")
 
 
 # -----------------------------------
