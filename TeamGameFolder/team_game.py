@@ -15,7 +15,7 @@
 import random
 
 #------------------
-# CONSTANTS 🎀
+# CONSTANTS | Written by 🎀 | Edited by
 #------------------
 
 MAX_INVENTORY = 5
@@ -30,7 +30,7 @@ weapons = {
 rooms = ["forest", "cave", "river", "temple"]
 
 # -----------------------------------
-# RESET GAME 😊
+# RESET GAME | Written by 😊 | Edited by
 # -----------------------------------
 
 def reset_game():
@@ -44,7 +44,7 @@ def reset_game():
     game_running = True
 
 # -----------------------------------
-# INSTRUCTIONS 😊
+# INSTRUCTIONS | Written by 😊 | Edited by
 # -----------------------------------
 
 def show_instructions():
@@ -62,7 +62,7 @@ def show_instructions():
     print("===================================")
 
 # -----------------------------------
-# MAP prints a simple map showing where you are. 😊
+# MAP prints a simple map showing where you are. | Written by 😊 | Edited by
 # -----------------------------------
 
 def show_map():
@@ -85,7 +85,7 @@ def show_map():
 
 
 # -----------------------------------
-# BEST WEAPON 😊
+# BEST WEAPON | Written by 😊 | Edited by
 # -----------------------------------
 
 def get_best_weapon():
@@ -103,7 +103,7 @@ def get_best_weapon():
     return best
 
 # -----------------------------------
-# INVENTORY 😊
+# INVENTORY | Written by 😊 | Edited by
 # -----------------------------------
 
 def show_inventory():
@@ -116,5 +116,34 @@ def show_inventory():
     print("Items:", len(inventory), "/", MAX_INVENTORY)
 
 # -----------------------------------
-# DROP ITEM 😊
+# DROP ITEM | Written by 😊 | Edited by
+# -----------------------------------
+
+def drop_item():
+
+    if not inventory:
+        print("Inventory is empty.")
+        return
+    
+    print("\nProp which item?")
+
+    for i in range(len(inventory)):
+        print(i+1, "-", inventory[i])
+
+    try:
+        choice = int(input(">")) - 1
+
+        if 0<= choice < len(inventory):
+
+            removed = inventory.pop(choice)
+            print("Dropped:", removed)
+
+        else:
+            print("Invalid choice.")
+
+    except:
+        print("Invalid input.")
+
+# -----------------------------------
+# SHOP | Written by 🎀 | Edited by
 # -----------------------------------
