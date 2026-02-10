@@ -225,3 +225,159 @@ def fight_monster(boss=False):
         
         monster_health = random.randint(5, 8)
         print()
+
+
+
+# -----------------------------------
+# RANDOM EVENT  | Written by 🎀 | Edited by 
+# -----------------------------------
+
+
+
+
+
+# -----------------------------------
+# ROOMS  | Written by 🎀 | Edited by 
+# -----------------------------------
+
+
+
+
+# -----------------------------------
+# MAIN  | Written by 😊 | Edited by 
+# -----------------------------------
+
+def main():
+
+    global current_room, game_running
+
+    reset_game()
+    show_instructions()
+
+    while game_running:
+
+        if health <=0:
+
+            print("\nGAME OVER 💀")
+
+            again = input("Play again? ").lower().strip()
+
+            if again == "yes":
+                reset_game()
+                continue
+            else:
+                break
+
+        if current_room == "forest":
+            forest()
+
+        elif current_room == "cave":
+            cave()
+
+        elif current_room == "river":
+            river()
+
+        elif current_room == "temple":
+
+            win = temple()
+
+            if win:
+
+                again = input("Play again? ").lower().strip()
+
+                if again == "yes":
+                    reset_game()
+                    continue
+                else:
+                    break
+
+        command = input("\nWhat do you do? ").lower().strip()
+
+        moved = False
+
+        # BASIC
+
+        if command == "quit":
+            break
+
+        elif command == "inventory":
+            show_inventory()
+
+        elif command == "map":
+            show_map()
+
+        elif command == "drop":
+            drop_item()
+
+        elif command == "shop":
+
+            if current_room == "river":
+                potion_shop()
+            else:
+                print("No shop here.")
+
+        # MOVEMENT
+
+        elif command == "north":
+
+            if current_room == "forest":
+                current_room = "cave"
+                moved = True
+
+            elif current_room == "river":
+
+                if "magic blade" in inventory:
+                    current_room = "temple"
+                    moved = True
+                else:
+                    print("Barrier! Need magic blade.")
+
+            else:
+                print("Can't go that way.")
+
+
+        elif command == "south":
+
+            if current_room == "cave":
+                current_room = "forest"
+                moved = True
+            else:
+                print("Can't go that way.")
+
+
+        elif command == "east":
+
+            if current_room == "forest":
+                current_room = "river"
+                moved = True
+
+            elif current_room == "cave":
+
+                if "magic blade" in inventory:
+                    current_room = "temple"
+                    moved = True
+                else:
+                    print("Barrier! Need magic blade.")
+
+            else:
+                print("Can't go that way.")
+        
+        elif command == "west":
+            if current_room == "river":
+                current_room = "forest"
+                moved = True
+            else:
+                print("Can't go that way.")
+
+        else:
+            print("Unknown command.")
+
+        if moved and current_room != "temple":
+            random_event() #Still needs to be written by 🎀
+
+
+# -----------------------------------
+# START  | Written by 😊
+# -----------------------------------
+
+main()
