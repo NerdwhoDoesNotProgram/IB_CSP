@@ -114,7 +114,7 @@ def show_inventory():
     print("Health:", health)
     print("Gold:",gold)
     print("Best Weapon:", get_best_weapon())
-    print("Inventory:", inventory.strip())
+    print("Inventory:", inventory)
     print("Items:", len(inventory), "/", MAX_INVENTORY)
 
 # -----------------------------------
@@ -453,11 +453,11 @@ def main():
 
             elif current_room == "river":
 
-                if "magic blade" in inventory:
+                if "magic wand" in inventory:
                     current_room = "temple"
                     moved = True
                 else:
-                    print("Barrier! Need magic blade.")
+                    print("Barrier! Need magic wand.")
 
             else:
                 print("Can't go that way.")
