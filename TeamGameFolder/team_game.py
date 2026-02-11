@@ -112,7 +112,7 @@ def show_inventory():
 
     print("\n--------------------")
     print("Health:", health)
-    print("Gold:",gold)
+    print("Gold: 🪙",gold)
     print("Best Weapon:", get_best_weapon())
     print("Inventory:", inventory)
     print("Items:", len(inventory), "/", MAX_INVENTORY)
@@ -344,7 +344,7 @@ def random_event():
 # -----------------------------------
 
 def forest():
-    print("\nyou are in a scary forest.")
+    print("\nyou are in a scary forest. 👻")
     print("paths: north, east")
 
 def cave():
