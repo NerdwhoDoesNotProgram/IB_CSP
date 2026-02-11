@@ -112,7 +112,7 @@ def show_inventory():
     print("Health:", health)
     print("Gold:",gold)
     print("Best Weapon:", get_best_weapon())
-    print("Inventory:", inventory)
+    print("Inventory:", inventory.strip())
     print("Items:", len(inventory), "/", MAX_INVENTORY)
 
 # -----------------------------------
@@ -230,9 +230,9 @@ def fight_monster(boss=False):
     while monster_health > 0 and health > 0:
 
 
-        print("|nyour Health:", health)
+        print("\nyour Health:", health)
         print("Enemy Health:", monster_health)
-        print ("options: figth / run / heal")
+        print ("options: fight / run / heal")
 
         choice = input("> ").lower()
 
@@ -241,8 +241,8 @@ def fight_monster(boss=False):
             weapon = get_best_weapon()
             power = weapons[weapon]
 
-            player_damage =  random.rnadit(1, power + 2)
-            monster_damage = random.randit(1, 3)
+            player_damage =  random.randint(1, power + 2)
+            monster_damage = random.randint(1, 3)
 
             monster_health -= player_damage 
             health -= monster_damage 
@@ -283,7 +283,7 @@ def fight_monster(boss=False):
     
       if boss:
 
-        print ("|nYOU WIN! 🏆")
+        print ("\nYOU WIN! 🏆")
         return "win"
 
     else:
@@ -301,66 +301,66 @@ def random_event():
     
     event = random.randint(1, 4)
 
-if event ==1:
+    if event == 1:
 
-    if random.choice(["gold", "potion"]) == "gold":
-        global gold 
-        amount = random.randint(2,4)
-        gold += amount
+        if random.choice(["gold", "potion"]) == "gold":
+            global gold 
+            amount = random.randint(2,5)
+            gold += amount
 
-print("you found", amount, "gold!")
+            print("you found", amount, "gold!")
 
-else:
-if len(inventory) < MAX_INVENTORY:
+        else:
+            if len(inventory) < MAX_INVENTORY:
 
-inventory.append("potion")
-print("you found", amount, "gold!")
+                inventory.append("potion")
+                print("you found", amount, "gold!")
 
-else:
+            else:
 
-print("Found a potion, but inventory is full.")
+                print("Found a potion, but inventory is full.")
 
-elif event == 2:
+    elif event == 2:
 
-fight_monster()
+        fight_monster()
 
-elif event == 3:
+    elif event == 3:
 
-    print("Nothing happens...")
+     print("Nothing happens...")
 
     elif event == 4:
 
-    open_chest(current_room)
+        open_chest(current_room)
     
 
 
 
 # -----------------------------------
-# ROOMS  | Written by 🎀 | Edited by 
+# ROOMS  | Written by 🎀 | Edited by 😊
 # -----------------------------------
 
 def forest():
-print("|nyou are in a scary forest.")
-print("paths: north, east")
+    print("\nyou are in a scary forest.")
+    print("paths: north, east")
 
 def cave():
-print("|nyou are in a dark cave.")
-print("paths: north, east")
+    print("\nyou are in a dark cave.")
+    print("paths: south, east")
 
 def river():
-print ("\nyou stand beside a beautiful river.")
-print("paths: west, north")
-print("A potion stand is here.")
+    print ("\nyou stand beside a beautiful river.")
+    print("paths: west, north")
+    print("A potion stand is here.")
 
 def temple():
-print("\ntyou enter the ancient temple.")
+    print("\ntyou enter the ancient temple.")
 
-result = fight_monster(boss=True)
+    result = fight_monster(boss=True)
 
-if result == "win":
-return True 
+    if result == "win":
+        return True 
 
-return False 
+    return False 
 
 
 
@@ -381,7 +381,7 @@ def main():
 
         if health <=0:
 
-            print("\GAME OVER 💀")
+            print("\nGAME OVER 💀")
 
             again = input("Play again? ").lower().strip()
 
@@ -496,7 +496,7 @@ def main():
             print("Unknown command.")
 
         if moved and current_room != "temple":
-            random_event() #Still needs to be written by 🎀
+            random_event()
 
 
 # -----------------------------------
