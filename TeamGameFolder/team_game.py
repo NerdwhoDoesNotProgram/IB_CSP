@@ -21,10 +21,10 @@ import random
 MAX_INVENTORY = 5
 
 weapons = {
-"fists": .5,
+"fists": 1,
 "stick": 2,
 "sword": 4,
-"magic wand":6
+"magic wand": 6
 }
 
 rooms = ["forest", "cave", "river", "temple"]
@@ -89,6 +89,7 @@ def show_map():
 # -----------------------------------
 
 def get_best_weapon():
+
     best = "fists"
     best_power = weapons["fists"]
 
