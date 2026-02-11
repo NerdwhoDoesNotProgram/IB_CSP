@@ -256,11 +256,11 @@ def fight_monster(boss=False):
                 print("You  cannot run from the boss!")
 
             else: 
-                if random.randit(1,2) == 1:
+                if random.randint(1,2) == 1:
                     print("You escaped!")
                 
                 else:
-                    damage = random.randit(1, 2)
+                    damage = random.randint(1, 2)
                     health -= damage 
                     print("Failed escape! Lost", damage)
 
@@ -304,6 +304,7 @@ def random_event():
     if event == 1:
 
         if random.choice(["gold", "potion"]) == "gold":
+
             global gold 
             amount = random.randint(2,5)
             gold += amount
@@ -311,10 +312,11 @@ def random_event():
             print("you found", amount, "gold!")
 
         else:
+
             if len(inventory) < MAX_INVENTORY:
 
                 inventory.append("potion")
-                print("you found", amount, "gold!")
+                print("you found a potion!")
 
             else:
 
