@@ -218,21 +218,111 @@ def fight_monster(boss=False):
     
     global health, gold
 
-    if boss:
+    If boss:
         monster_health = random.randint(30, 36)
         print("\nTHE DARK BOSS APPEARS!")
     else: 
         
         monster_health = random.randint(5, 8)
-        print()
+        print("\nA monster attacks! OH NO!")
+
+while monster_health > 0 and health > 0:
 
 
+    print("|nyour Health:", health)
+    print("Enemy Health:", monster_health)
+    print (options: figth / run / heal")
 
+choice = input("> ").lower()
+
+if choice == :fight':
+
+ weapon = get_best_weapon()
+ power = weapons[weapon]
+
+player_damage =  random.rnadit(1, power + 2)
+monster_damage = random.randit(1, 3)
+
+monster_health -= player_damage 
+health -= monster_damage 
+
+print("you used:", weapon)
+print("you dealt:, player_damage)
+print ("enemy dealt:", monster_damage)
+      
+      elif choice == "run":
+If boss: 
+    print("You  cannot run from the boss!")
+else: 
+if random.randit(1, 2)
+health -= damage 
+print("Failed escape! Lost", damage)
+
+elif choice == "heal":
+
+if "potion" in inventory:
+    inventory.remove("potion")
+health += 4
+
+print("Healed! health:", health)
+
+else:
+print("no potions!")
+
+else:
+print("Invalid command.")
+
+if monster_health <= 0:
+    if boss:
+        print ("|nYOU WIN! 🏆")
+        return "win"
+
+    else:
+        rewars =  random.randint(2, 5)
+        
+        gold += reward 
+        print("Monster defeated!") 
+        print("Gained", a reward, "gold. ")
+        
 # -----------------------------------
 # RANDOM EVENT  | Written by 🎀 | Edited by 
 # -----------------------------------
 
+def random_event():
+    
+    event = random.randint(1, 4)
 
+if event ==1:
+
+    if random.choice(["gold", "potion"]) == "gold":
+        global gold 
+        amount = random.randint(2,4)
+        gold += amount
+
+print("you found', amount, "gold!")
+
+else:
+if len(inventory) < MAX_INVENTORY:
+
+inventory.append('potion")
+print("you found", amount, "gold!")
+
+else:
+
+print("Found a potion, but inventory is full.")
+
+elif event == 2:
+
+fight_monster()
+
+elif event == 3:
+
+    print("Nothing happens...")
+
+    elif event == 4:
+
+    open_chest(current_room)
+    
 
 
 
@@ -240,11 +330,35 @@ def fight_monster(boss=False):
 # ROOMS  | Written by 🎀 | Edited by 
 # -----------------------------------
 
+def forest():
+print("|nyou are in a scary forest.")
+print("paths: north, east")
+
+def cave():
+print("|nyou are in a dark cave.")
+print("paths: north, east")
+
+def river():
+print ("\nyou stand beside a beautiful river.")
+print("paths: west, north")
+print("A potion stand is here.")
+
+def temple():
+print("\ntyou enter the ancient temple.")
+
+result = fight_monster(boss=True)
+
+if result == "win":
+return True 
+
+return False 
+
+
 
 
 
 # -----------------------------------
-# MAIN  | Written by 😊 | Edited by 
+# MAIN  | Written by 😊 | Edited by 🎀 
 # -----------------------------------
 
 def main():
@@ -258,7 +372,7 @@ def main():
 
         if health <=0:
 
-            print("\nGAME OVER 💀")
+            print("\GAME OVER 💀")
 
             again = input("Play again? ").lower().strip()
 
