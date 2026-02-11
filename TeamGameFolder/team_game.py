@@ -5,12 +5,13 @@
 
 # Step by step  plan:
 # Defines each of the needed variables, including room names
-# 
 # Plans the rooms
 # Makes you able to decide what/where to go.
 # Loops that choice
 # Boss
 # Win or lose
+# Combines and plays all functions within a function (probably called 'main').
+# Calls the main function
 
 import random
 
@@ -163,7 +164,7 @@ def potion_shop():
         return
     
     if gold < 5:
-        print("you dummy, your poor, HA HA HA - GLG")
+        print("you dummy, your poor, HA HA HA")
         return 
     
     buy = input("Buy potion? (yes/no): ").lower().strip()
