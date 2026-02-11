@@ -218,7 +218,8 @@ def fight_monster(boss=False):
     
     global health, gold
 
-    If boss:
+
+    if boss:
         monster_health = random.randint(30, 36)
         print("\nTHE DARK BOSS APPEARS!")
     else: 
@@ -226,66 +227,74 @@ def fight_monster(boss=False):
         monster_health = random.randint(5, 8)
         print("\nA monster attacks! OH NO!")
 
-while monster_health > 0 and health > 0:
+    while monster_health > 0 and health > 0:
 
 
-    print("|nyour Health:", health)
-    print("Enemy Health:", monster_health)
-    print (options: figth / run / heal")
+        print("|nyour Health:", health)
+        print("Enemy Health:", monster_health)
+        print ("options: figth / run / heal")
 
-choice = input("> ").lower()
+        choice = input("> ").lower()
 
-if choice == :fight':
+        if choice == "fight":
 
- weapon = get_best_weapon()
- power = weapons[weapon]
+            weapon = get_best_weapon()
+            power = weapons[weapon]
 
-player_damage =  random.rnadit(1, power + 2)
-monster_damage = random.randit(1, 3)
+            player_damage =  random.rnadit(1, power + 2)
+            monster_damage = random.randit(1, 3)
 
-monster_health -= player_damage 
-health -= monster_damage 
+            monster_health -= player_damage 
+            health -= monster_damage 
 
-print("you used:", weapon)
-print("you dealt:, player_damage)
-print ("enemy dealt:", monster_damage)
+            print("you used:", weapon)
+            print("you dealt:" , player_damage)
+            print ("enemy dealt:", monster_damage)
       
-      elif choice == "run":
-If boss: 
-    print("You  cannot run from the boss!")
-else: 
-if random.randit(1, 2)
-health -= damage 
-print("Failed escape! Lost", damage)
+        elif choice == "run":
+            if boss: 
+                print("You  cannot run from the boss!")
 
-elif choice == "heal":
+            else: 
+                if random.randit(1,2) == 1:
+                    print("You escaped!")
+                
+                else:
+                    damage = random.randit(1, 2)
+                    health -= damage 
+                    print("Failed escape! Lost", damage)
 
-if "potion" in inventory:
-    inventory.remove("potion")
-health += 4
+        elif choice == "heal":
 
-print("Healed! health:", health)
+            if "potion" in inventory:
+                
+                inventory.remove("potion")
+                health += 4
 
-else:
-print("no potions!")
+                print("Healed! health:", health)
 
-else:
-print("Invalid command.")
+            else:
+                print("no potions!")
 
-if monster_health <= 0:
-    if boss:
+        else:
+            print("Invalid command.")
+
+    if monster_health <= 0:
+    
+      if boss:
+
         print ("|nYOU WIN! 🏆")
         return "win"
 
     else:
-        rewars =  random.randint(2, 5)
-        
+        reward =  random.randint(2, 5)
         gold += reward 
+
         print("Monster defeated!") 
-        print("Gained", a reward, "gold. ")
+        print("Gained", reward, "gold.")
         
 # -----------------------------------
-# RANDOM EVENT  | Written by 🎀 | Edited by 
+# RANDOM EVENT  | Written by 🎀 | Edited by 😊
 # -----------------------------------
 
 def random_event():
@@ -299,12 +308,12 @@ if event ==1:
         amount = random.randint(2,4)
         gold += amount
 
-print("you found', amount, "gold!")
+print("you found", amount, "gold!")
 
 else:
 if len(inventory) < MAX_INVENTORY:
 
-inventory.append('potion")
+inventory.append("potion")
 print("you found", amount, "gold!")
 
 else:
