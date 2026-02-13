@@ -19,6 +19,8 @@ import random
 # CONSTANTS | Written by 🎀 | Edited by 😊
 #------------------
 
+# Defines some things that will never change throughout the game.
+
 MAX_INVENTORY = 5
 
 weapons = {
@@ -34,6 +36,8 @@ rooms = ["forest", "cave", "river", "temple"]
 # RESET GAME | Written by 😊 | Edited by
 # -----------------------------------
 
+# This is how we reset the game if you die.
+
 def reset_game():
 
     global health, gold,  inventory, current_room, game_running
@@ -47,6 +51,8 @@ def reset_game():
 # -----------------------------------
 # INSTRUCTIONS | Written by 😊 | Edited by
 # -----------------------------------
+
+# Opening title page
 
 def show_instructions():
     print("\n===================================")
@@ -89,6 +95,8 @@ def show_map():
 # BEST WEAPON | Written by 😊 | Edited by
 # -----------------------------------
 
+# FInds the most powerful weapon in your inventory and automatically uses it to fight
+
 def get_best_weapon():
 
     best = "fists"
@@ -121,6 +129,8 @@ def show_inventory():
 # DROP ITEM | Written by 😊 | Edited by
 # -----------------------------------
 
+# Lets you drop unwanted items and empty as mush of your inventory as you want.
+
 def drop_item():
 
     if not inventory:
@@ -150,6 +160,8 @@ def drop_item():
 # SHOP | Written by 🎀 | Edited by 😊
 # ----------------------------------
 
+# The potion shop by the river
+
 def potion_shop():
     
     global gold
@@ -178,6 +190,8 @@ def potion_shop():
 # -----------------------------------
 # CHEST | Written by 😊 | Edited by 🎀
 # -----------------------------------
+
+# This shows what the possible contents of the chest are, some of which are influenced by where you are.
 
 def open_chest(room):
 
@@ -215,6 +229,8 @@ def open_chest(room):
 # -----------------------------------
 # COMBAT  | Written by 🎀 | Edited by 😊
 # -----------------------------------
+
+# Here is where it has the monsters health and attacks, as well as how you fight ect. This section also rewards you with gold [or winnning the game] after defeating enemies.
 
 def fight_monster(boss=False):
     
@@ -254,17 +270,20 @@ def fight_monster(boss=False):
             print ("enemy dealt:", monster_damage)
       
         elif choice == "run":
+
             if boss: 
                 print("You  cannot run from the boss!")
 
             else: 
+
                 if random.randint(1,2) == 1:
                     print("You escaped!")
-                
+                    return
                 else:
                     damage = random.randint(1, 2)
                     health -= damage 
                     print("Failed escape! Lost", damage)
+
 
         elif choice == "heal":
 
@@ -284,20 +303,23 @@ def fight_monster(boss=False):
     if monster_health <= 0:
     
       if boss:
-
-        print ("\nYOU WIN! 🏆")
+        boss_reward = random.randint(2000, 99999)
+        gold += boss_reward
+        print("\n💰🪙💰🪙💰🪙💰🪙YOU WIN 💰 ", boss_reward, "🪙 GOLD!💰🪙💰🪙💰🪙💰🪙")
+        print ("\nYOU BEAT THE GAME! 🏆")
         return "win"
 
-    else:
-        reward =  random.randint(2, 5)
+      else:
+        reward =  random.randint(3, 6)
         gold += reward 
-
         print("Monster defeated!") 
         print("Gained", reward, "gold.")
         
 # -----------------------------------
 # RANDOM EVENT  | Written by 🎀 | Edited by 😊
 # -----------------------------------
+
+# Here is where it decises what happens each time that you walk into a room. Whether it is being attacked, getting a chest/item, or nothing...
 
 def random_event():
     
@@ -330,7 +352,7 @@ def random_event():
 
     elif event == 3:
 
-     print("Nothing happens...")
+        print("Nothing happens...")
 
     elif event == 4:
 
@@ -342,6 +364,8 @@ def random_event():
 # -----------------------------------
 # ROOMS  | Written by 🎀 | Edited by 😊
 # -----------------------------------
+
+# Defines the rooms, and the options to go from each of the rooms, as well as the 'intro' print line to each room.
 
 def forest():
     print("\nyou are in a scary forest. 👻")
@@ -373,6 +397,8 @@ def temple():
 # -----------------------------------
 # MAIN  | Written by 😊 | Edited by 🎀 
 # -----------------------------------
+
+# Puts all of the previous functions together and actually runs it.
 
 def main():
 
@@ -422,7 +448,7 @@ def main():
 
         moved = False
 
-        # BASIC
+        # BASIC (Basic commands such as looking at inventory, map, and quitting the game.)
 
         if command == "quit":
             break
@@ -443,7 +469,7 @@ def main():
             else:
                 print("No shop here.")
 
-        # MOVEMENT
+        # MOVEMENT (Allows and restricts your character movement between rooms/places [only one restriction, needing the magic wand to enter the temple to fight the boss])
 
         elif command == "north":
 
@@ -477,14 +503,14 @@ def main():
             if current_room == "forest":
                 current_room = "river"
                 moved = True
-
+ 
             elif current_room == "cave":
 
-                if "magic blade" in inventory:
+                if "magic wand" in inventory:
                     current_room = "temple"
                     moved = True
                 else:
-                    print("Barrier! Need magic blade.")
+                    print("Barrier! Need magic wand.")
 
             else:
                 print("Can't go that way.")
