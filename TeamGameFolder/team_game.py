@@ -52,7 +52,7 @@ def reset_game():
 # INSTRUCTIONS | Written by 😊 | Edited by
 # -----------------------------------
 
-# Opening title page
+# Opening title page! Shows you the commands for the game.
 
 def show_instructions():
     print("\n===================================")
