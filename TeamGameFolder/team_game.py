@@ -176,7 +176,7 @@ def potion_shop():
         return
     
     if gold < 5:
-        print("you dummy, your poor, HA HA HA")
+        print("You dummy, your poor, HA HA HA. Go fight monsters to get more Gold")
         return 
     
     buy = input("Buy potion? (yes/no): ").lower().strip()
@@ -483,7 +483,7 @@ def main():
                     current_room = "temple"
                     moved = True
                 else:
-                    print("Barrier! Need magic wand.")
+                    print("Barrier! Need magic wand. (P.S. Try the caves)")
 
             else:
                 print("Can't go that way.")
@@ -510,7 +510,7 @@ def main():
                     current_room = "temple"
                     moved = True
                 else:
-                    print("Barrier! Need magic wand.")
+                    print("Barrier! Need magic wand. (P.S. Try the caves)")
 
             else:
                 print("Can't go that way.")
