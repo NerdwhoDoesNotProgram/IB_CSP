@@ -6,12 +6,22 @@ int main(){
     int age = 9999;
     float gpa = 3.98;
     char grade = 'A';   // Single letter uses single quotes
-    char name[] = "Eric";
+    const char name[] = "Eric";
+    int number;
+    char user[50];
 
+    gpa = 4.0;
 
+    printf("Tell me your name\n");
+    scanf("%s", &user); // Can not take in more than one word
+
+    printf("What is your favorite number\n");
+    scanf("%d", &number);
+
+    printf("%s's favorite number is: %d\n", user, number);
     printf("It worked!\n");
     printf("%d\n", age);
     printf("Your GPA is: %f\n", gpa);
-    printf("you have a %c incomputer science\n", grade);
+    printf("you have an %c incomputer science\n", grade);
     return 0; //required last line in your main function
 }
