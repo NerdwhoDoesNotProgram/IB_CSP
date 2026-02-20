@@ -22,5 +22,5 @@ int main(){
 
     char subject[] = "Geography";
 
-    printf("%s chose the number %d.\nHe is %d years old.\nHe had %s for breakfast before going to %s for the %d year of school.\nHe maintains a %.1f gpa.\nHis favorite subject is %s and his favorite color is %s, which matches his %s eyes.", name, number, age, breakfast, school, year, gpa, subject, color, eye_color);
+    printf("%s chose the number %d.\nHe is %d years old.\nHe had %s for breakfast before going to %s for the %d year of school.\nHe maintains a %.1f GPA.\nHis favorite subject is %s and his favorite color is %s, which matches his %s eyes.", name, number, age, breakfast, school, year, gpa, subject, color, eye_color);
 }
