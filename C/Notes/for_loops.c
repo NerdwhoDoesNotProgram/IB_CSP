@@ -20,7 +20,7 @@ int main(){
     srand(time(NULL));
 
     int number = rand() % 10 +1;
-    int count = 0;
+    int count = 1;
 
     for(count; count < number; count++){
         printf("duck\n");
