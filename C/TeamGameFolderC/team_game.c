@@ -207,19 +207,172 @@ void show_map() {
 
 
 // ---------------------------
-// Battle System | Written by  | Edited by 
+// Battle System | Written by IB | Edited by 
 // ---------------------------
+bool fight_monster(bool boss) {
+    int enemy_health;
+    int enemy_damage_min;
+    int enemy_damage_max;
 
+    if (boss) {
+        enemy_health = rand() % 5 + 24; // 24 through 28
+        enemy_damage_min = 2;
+        enemy_damage_max = 4;
+
+        printf("\n*** FINAL BOSS APPEARS! ***\n");
+        printf("This enemy looks powerful... you hope you came prepared.\n");
+    } else {
+        enemy_health = rand() % 4 + 5; // 5 to 8
+        enemy_damage_min = 1;
+        enemy_damage_max = 3;
+
+        printf("\nA monster attacks!\n");
+    }
+
+    while (enemy_health > 0 && health > 0) {
+        char action[20];
+
+        printf("\nEnemy Health: %d\n", enemy_health);
+        printf("Your Health: %d/%d\n", health, MAX_HEALTH);
+        printf("Choose action (fight/heal/run): ");
+        
+        fgets(action, sizeof(action), stdin);
+        remove_newline(action);
+        to_lowercase(action);
+        
+        if (strcmp(action, "fight") == 0) {
+            int player_damage = rand() % (weapon_power + 2) + 1;
+            enemy_health -= player_damage;
+            printf("You hit for %d damage!\n", player_damage);
+            
+            if (enemy_health > 0) {
+                int enemy_damage = rand() % (enemy_damage_max - enemy_damage_min + 1) + enemy_damage_min;
+                health -= enemy_damage;
+                printf("The enemy hits you for %d damage!\n", enemy_damage);
+            }
+        } else if (strcmp(action, "heal") == 0) {
+            if (use_potion()) {
+                int enemy_damage = rand() % (enemy_damage_max - enemy_damage_min + 1) + enemy_damage_min;
+                health -= enemy_damage;
+                printf("The enemy attacks while you heal for %d damage!\n", enemy_damage);
+            }
+        } else if (strcmp(action, "run") == 0) {
+            if (boss) {
+                printf("You cannot run from the final boss!\n");
+            } else {
+                printf("You escaped!\n");
+                return true;
+            }
+        } else {
+            print("Invalid action");
+        }
+    }
+    
+    if (health <= 0) {
+        printf("\nYou were defeated...\n");
+        return false;
+    }
+    
+    if (boss) {
+        printf("\n*** You defeated the final boss and won the game! ***\n");
+        boss_defeated = true;
+    } else {
+        printf("You defeated the monster!\n");
+    }
+
+    return true;
+}
 
 // ---------------------------
-// Room Functions | Written by  | Edited by 
+// Room Functions | Written by RH | Edited by 
 // ---------------------------
+// forest room
+bool forest_room(){
+    printf("\n You enter the Forest.\n");
+
+    if (!forest_hint_seen){
+        printf("A paper pinned to a tree reads: \"Old places may hide new treasures.💰\"\n");
+        forest_hint_seen = true;
+    }
+    
+    int event = rand() % 3;
+    
+    if (event == 0) {
+        printf("You find a potion near a tree stump.\n");
+        add_item("potion");
+    }
+    else if (event == 1){
+        printf("a wild beast jumps out from the bushes!🐺🐺\n");
+        if (!fight_monster(false)) {
+            return false;
+        }
+    }
+    else {
+        printf("The forest is quiet... to quiet.🦗🦗");
+    }
+    return true;
+}
+
+// cave room
+    bool cave_room(){
+        printf("\nYou enter the cave,👻 it looks spooky.👻👻\n"); // I added it lookes spooky for affects
+        
+        int event = rand() % 4;
+       
+        if (event == 0) {
+            pritnf("You find a strudy stick on the ground,🥀 It's not the best.\n");
+            add_item("srick");
+        }
+        else if (event ==1) {
+            printf("You discover an old sword stuck in rocks.🗡️\n"); // I changed the frasing a bit
+            add_item("sword");
+        }
+        else if (event ==2) {
+            printf(" deep in the shadows you find... A MAGIC WAND!!🪄🪄\n"); // chnged words to sound more fun
+            add_item("magic wand");
+        }
+        return true;
+    }
+
+// River room
+    bool river_room(){
+        printf("You walk to the river.\n");
+        
+        int event = rand() % 3;
+        if (event == 0) {
+            printf("")
+        }
+        
+        
+        
+        return true;
+    }
+
 
 
 // ---------------------------
 // Main Game Loop | Written by  | Edited by 
 // ---------------------------
 
+// Written by IB | Edited by
+// Run one full game
+void play_game() {
+    char command[20];
+    bool game_running = true;
+
+    reset_game();
+    show_instructions();
+
+    while (game_running && health > 0 && !boss_defeated) {
+        show_map();
+        show_stats();
+
+        printf("\nWhere do you want to go? ");
+        fgets(command, sizeof(command), stdin);
+        remove_newline(command);
+        to_lowercase(command);
+    }
+}
 
 // ---------------------------
 // Main Function | Written by  | Edited by 
