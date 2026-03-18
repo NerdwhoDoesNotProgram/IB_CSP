@@ -60,7 +60,7 @@ game_running = true;
 
 int show_instructions(); 
 */
-// --------------------------- Back to wat may now be needed.
+// --------------------------- Back to what may now be needed.
 
 
 
@@ -264,7 +264,7 @@ bool fight_monster(bool boss) {
                 return true;
             }
         } else {
-            print("Invalid action");
+            printf("Invalid action");
         }
     }
     
@@ -320,7 +320,7 @@ bool forest_room(){
         int event = rand() % 4;
        
         if (event == 0) {
-            pritnf("You find a strudy stick on the ground,🥀 It's not the best.\n");
+            printf("You find a strudy stick on the ground,🥀 It's not the best.\n");
             add_item("srick");
         }
         else if (event ==1) {
@@ -341,14 +341,35 @@ bool forest_room(){
         int event = rand() % 3;
         
         if (event == 0) {
-            printf("")
+            printf("\nYou find a potioin floating near the shore.\n");
+            add_item("potion"); 
         }
-        
-        
+        else if (event == 1) {
+            printf("\nSomething lurks near the water...\n");
+            if (!fight_monster(false)) {
+                return false;
+            }
+        }
+        else {
+            printf("\nThe river is calm you take a short rest.\n");
+        }
         
         return true;
     }
+// Temple room
+    bool temple_room(){
+        printf("\nYou arrive at the ancient temple of the gods.\n");
+        if (!has_wand) {
+            printf("\nA magical abrrier blocks you from entering the temple.\n");
+            printf("\nA glowing poneglyph says: \"Only the wand lets past.\n ");
+            return true;
+        }
+        printf("\nYou cast a spell and the barrier disapears in your eyes.\n");
+        printf("\nYou step into the temple\n");
 
+        return fight_monster(true);
+
+    }
 
 
 // ---------------------------
@@ -428,3 +449,25 @@ void play_game() {
 // ---------------------------
 // Main Function | Written by  | Edited by 
 // ---------------------------
+
+// Written by IB | Edited by
+int main() {
+    char play_again[10];
+
+    srand(time(NULL));
+
+    printf("=====================================\n");
+    printf("      THE LOST TEMPLE ADVENTURE\n");
+    printf("=====================================\n");
+
+    do  {
+        play_game();
+        printf("\nWould you like to play again? (yes/no): ");
+        fgets(play_again, sizeof(play_again), stdin);
+        remove_newline(play_again);
+        to_lowercase(play_again);
+    } while (strcmp(play_again, "yes") == 0);
+    
+    printf("\nThanks for playing!\n");
+    return 0;
+}
