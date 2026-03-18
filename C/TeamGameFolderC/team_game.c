@@ -339,6 +339,7 @@ bool forest_room(){
         printf("You walk to the river.\n");
         
         int event = rand() % 3;
+        
         if (event == 0) {
             printf("")
         }
@@ -371,6 +372,56 @@ void play_game() {
         fgets(command, sizeof(command), stdin);
         remove_newline(command);
         to_lowercase(command);
+
+        if (strcmp(command, "north") == 0) {
+            // If player has the wand, they may enter the temple and fight the boss
+            if (has_wand) {
+                if (!temple_room()) {
+                    game_running = false;
+                }
+            } else {
+                // Otherwise, just show the barrier message
+                temple_room();
+            }
+        }
+        else if (strcmp(command, "south") == 0) {
+            if (!river_room()) {
+                game_running = false;
+            }
+        }
+        else if (strcmp(command, "east") == 0) {
+            if (!cave_room()) {
+                game_running = false;
+            }
+        }
+        else if (strcmp(command, "west") == 0) {
+            if (!forest_room()) {
+                game_running = false;
+            }
+        }
+        else if (strcmp(command, "inventory") == 0) {
+            printf("\nYou are carrying:\n");
+            printf("- Weapon: %s\n", current_weapon);
+            printf("- Potions: %d\n", potions);
+            printf("- Inventory slots used: %d/%d\n", inventory_count, MAX_INVENTORY);
+        }
+        else if (strcmp(command, "heal") == 0) {
+            use_potion();
+        }
+        else if (strcmp(command, "quit") == 0) {
+            printf("You leave the adventure behind.\n");
+            game_running = false;
+        }
+        else {
+            printf("Invalid command.\n");
+        }
+    }
+
+    if (boss_defeated) {
+        printf("\nCongratulations, adventurer!\n");
+    }
+    else if (health <= 0) {
+        printf("\nGame Over.\n");
     }
 }
 
