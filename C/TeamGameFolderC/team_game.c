@@ -1,5 +1,9 @@
+// add function to make a monster in the forest be the black night
+//show an 'X' at where you are on the map
+
+
 // =====================================================
-// (Name TBD)
+// THE HOLY GRAIL
 // Written by: IB and RH
 // 7th Period
 // =====================================================
@@ -30,38 +34,6 @@ char current_weapon[20];
 bool has_wand;
 bool forest_hint_seen;
 bool boss_defeated;
-
-// --------------------------- Possibly unneeded now with how we have to do it, but we will see | Written by RH
-// -----------------------------------
- //RESET GAME | Written by RH | Edited by
-// -----------------------------------
-
-// This is how we reset game if you die.
-/*
-int health;
-int gold;
-char inventory[5]; 
-int current_room;
-int game_running;
-
-int reset_game();
-
-health = 12;
-gold = 0;
-inventory[0] = " ";
-current_room = "forest";
-game_running = true;
-
-// -----------------------------------
-// INSTRUCTIONS | Written by RH | Edited by
-// -----------------------------------
-  
-// Opening title page! Shows you the commands for the game.
-
-int show_instructions(); 
-*/
-// --------------------------- Back to what may now be needed.
-
 
 
 // ---------------------------
@@ -195,6 +167,18 @@ void show_stats() {
     printf("------------------------\n");
 }
 
+/*
+//Written by IB | Edited by
+// Updates the map as to show you where you are
+
+pos = current_room
+
+char mark(room) {
+    if (room ==)
+}
+*/
+
+
 // Written by IB | Edited by
 // Show the simple map
 void show_map() {
@@ -207,7 +191,7 @@ void show_map() {
 
 
 // ---------------------------
-// Battle System | Written by IB | Edited by 
+// Battle System | Written by IB | Edited by RH
 // ---------------------------
 bool fight_monster(bool boss) {
     int enemy_health;
@@ -258,13 +242,14 @@ bool fight_monster(bool boss) {
             }
         } else if (strcmp(action, "run") == 0) {
             if (boss) {
-                printf("You cannot run from the final boss!\n");
+                printf("You cannot run from the final boss! If you try he eats you!\n");
+                health = 0;
             } else {
                 printf("You escaped!\n");
                 return true;
             }
         } else {
-            printf("Invalid action");
+            printf("Invalid action\n");
         }
     }
     
@@ -277,7 +262,7 @@ bool fight_monster(bool boss) {
         printf("\n*** You defeated the final boss and won the game! ***\n");
         boss_defeated = true;
     } else {
-        printf("You defeated the monster!\n");
+        printf("\nYou defeated the monster!\n");
     }
 
     return true;
@@ -288,27 +273,27 @@ bool fight_monster(bool boss) {
 // ---------------------------
 // forest room
 bool forest_room(){
-    printf("\n You enter the Forest.\n");
+    printf("\nYou enter the Forest.\n");
 
     if (!forest_hint_seen){
-        printf("A paper pinned to a tree reads: \"Old places may hide new treasures.💰\"\n");
+        printf("\nA paper pinned to a tree reads: \"Old places may hide new treasures.💰\"\n");
         forest_hint_seen = true;
     }
     
     int event = rand() % 3;
     
     if (event == 0) {
-        printf("You find a potion near a tree stump.\n");
+        printf("\nYou find a potion near a tree stump.\n");
         add_item("potion");
     }
     else if (event == 1){
-        printf("a wild beast jumps out from the bushes!🐺🐺\n");
+        printf("\nYou encounter the black knight. \n");
         if (!fight_monster(false)) {
             return false;
         }
     }
     else {
-        printf("The forest is quiet... to quiet.🦗🦗");
+        printf("\nThe forest is quiet... to quiet.🦗🦗\n");
     }
     return true;
 }
@@ -320,15 +305,15 @@ bool forest_room(){
         int event = rand() % 4;
        
         if (event == 0) {
-            printf("You find a strudy stick on the ground,🥀 It's not the best.\n");
-            add_item("srick");
+            printf("\nYou find a strudy stick on the ground,🥀 It's not the best.\n");
+            add_item("stick");
         }
         else if (event ==1) {
-            printf("You discover an old sword stuck in rocks.🗡️\n"); // I changed the frasing a bit
+            printf("\nYou discover an old sword stuck in rocks.🗡️\n"); // I changed the frasing a bit
             add_item("sword");
         }
         else if (event ==2) {
-            printf(" deep in the shadows you find... A MAGIC WAND!!🪄🪄\n"); // chnged words to sound more fun
+            printf(" \nDeep in the shadows you find... A MAGIC WAND!!🪄🪄\n"); // chnged words to sound more fun
             add_item("magic wand");
         }
         return true;
@@ -336,16 +321,16 @@ bool forest_room(){
 
 // River room
     bool river_room(){
-        printf("You walk to the river.\n");
+        printf("\nYou walk to the river.\n");
         
         int event = rand() % 3;
         
         if (event == 0) {
-            printf("\nYou find a potioin floating near the shore.\n");
+            printf("\nYou find a potion floating near the shore.\n");
             add_item("potion"); 
         }
         else if (event == 1) {
-            printf("\nSomething lurks near the water...\n");
+            printf("\nSomething lurks near the water... Its a gnome! He runs away.\n");
             if (!fight_monster(false)) {
                 return false;
             }
@@ -360,7 +345,7 @@ bool forest_room(){
     bool temple_room(){
         printf("\nYou arrive at the ancient temple of the gods.\n");
         if (!has_wand) {
-            printf("\nA magical abrrier blocks you from entering the temple.\n");
+            printf("\nA magical barrier blocks you from entering the temple.\n");
             printf("\nA glowing poneglyph says: \"Only the wand lets past.\n ");
             return true;
         }
@@ -457,7 +442,7 @@ int main() {
     srand(time(NULL));
 
     printf("=====================================\n");
-    printf("      THE LOST TEMPLE ADVENTURE\n");
+    printf("           THE HOLY GRAIL\n");
     printf("=====================================\n");
 
     do  {
