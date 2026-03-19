@@ -63,7 +63,7 @@ void recalculate_inventory_stats() {
     potions = 0;
     has_wand = false;
     weapon_power = 1;
-    strcpy(current_weapon, "fists");
+    strcpy(current_weapon, "fists");// strcpy is from string.h and copies the second string into the first string (which is why we needed string.h). https://www.w3schools.com/c/ref_string_strcpy.php
 
     for (int i = 0; i < inventory_count; i++) {
         if (strcmp(inventory[i], "potion") == 0) {
@@ -247,10 +247,10 @@ bool use_potion() {
 }
 
 // ---------------------------
-// Game Setup / Display | Written by IB | Edited by 
+// Game Setup / Display | Written by IB & RH | Edited by 
 // ---------------------------
 
-// Written by IB | Edited by
+// Written by IB & RH | Edited by
 // Reset all game variables at the start of a new game
 void reset_game() {
     health = MAX_HEALTH;
@@ -406,7 +406,7 @@ bool fight_monster(bool boss) {
 }
 
 // ---------------------------
-// Room Functions | Written by RH | Edited by 
+// Room Functions | Written by RH | Edited by IB
 // ---------------------------
 // forest room
 bool forest_room() {
@@ -520,7 +520,7 @@ bool temple_room() {
 
 
 // ---------------------------
-// Main Game Loop | Written by  | Edited by 
+// Main Game Loop | Written by IB | Edited by 
 // ---------------------------
 
 // Written by IB | Edited by
@@ -597,7 +597,7 @@ void play_game() {
 }
 
 // ---------------------------
-// Main Function | Written by  | Edited by 
+// Main Function | Written by IB | Edited by 
 // ---------------------------
 
 // Written by IB | Edited by
