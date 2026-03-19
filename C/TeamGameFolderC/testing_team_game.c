@@ -411,7 +411,6 @@ bool fight_monster(bool boss) {
 // forest room
 bool forest_room() {
     strcpy(current_room, "forest");
-    show_map();
 
     printf("\nYou enter the Forest.\n");
 
@@ -443,7 +442,6 @@ bool forest_room() {
 // cave room
 bool cave_room() {
     strcpy(current_room, "cave");
-    show_map();
 
     printf("\nYou enter the cave,👻 it looks spooky.👻👻\n"); // I added it looks spooky for affects
 
@@ -473,7 +471,6 @@ bool cave_room() {
 // River room
 bool river_room() {
     strcpy(current_room, "river");
-    show_map();
 
     printf("\nYou walk to the river.\n");
 
@@ -503,7 +500,6 @@ bool river_room() {
 // Temple room
 bool temple_room() {
     strcpy(current_room, "temple");
-    show_map();
 
     printf("\nYou arrive at the ancient temple of the gods.\n");
 
