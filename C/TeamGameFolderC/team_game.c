@@ -1,4 +1,4 @@
-// add function to make a monster in the forest be the black night
+// add function to make a monster in the forest be the black knight
 //show an 'X' at where you are on the map
 
 
@@ -242,7 +242,7 @@ bool fight_monster(bool boss) {
             }
         } else if (strcmp(action, "run") == 0) {
             if (boss) {
-                printf("You cannot run from the final boss! If you try he eats you!\n");
+                printf("You cannot run from the final boss! As you turn away, he devours you whole!\n");
                 health = 0;
             } else {
                 printf("You escaped!\n");
@@ -272,7 +272,7 @@ bool fight_monster(bool boss) {
 // Room Functions | Written by RH | Edited by 
 // ---------------------------
 // forest room
-bool forest_room(){
+bool forest_room() {
     printf("\nYou enter the Forest.\n");
 
     if (!forest_hint_seen){
@@ -293,68 +293,73 @@ bool forest_room(){
         }
     }
     else {
-        printf("\nThe forest is quiet... to quiet.🦗🦗\n");
+        printf("\nThe forest is quiet... too quiet.🦗🦗\n");
     }
     return true;
 }
 
 // cave room
-    bool cave_room(){
-        printf("\nYou enter the cave,👻 it looks spooky.👻👻\n"); // I added it lookes spooky for affects
+bool cave_room() {
+    printf("\nYou enter the cave,👻 it looks spooky.👻👻\n"); // I added it looks spooky for affects
         
-        int event = rand() % 4;
+    int event = rand() % 4;
        
-        if (event == 0) {
-            printf("\nYou find a strudy stick on the ground,🥀 It's not the best.\n");
-            add_item("stick");
-        }
-        else if (event ==1) {
-            printf("\nYou discover an old sword stuck in rocks.🗡️\n"); // I changed the frasing a bit
-            add_item("sword");
-        }
-        else if (event ==2) {
-            printf(" \nDeep in the shadows you find... A MAGIC WAND!!🪄🪄\n"); // chnged words to sound more fun
-            add_item("magic wand");
-        }
-        return true;
+    if (event == 0) {
+         printf("\nYou find a sturdy stick on the ground,🥀 It's not the best.\n");
+          add_item("stick");
+    } else if (event ==1) {
+        printf("\nYou discover an old sword stuck in rocks.🗡️\n"); // I changed the frasing a bit
+        add_item("sword");
+    } else if (event ==2) {
+        printf(" \nDeep in the shadows you find... A MAGIC WAND!!🪄🪄\n"); // changed words to sound more fun
+        add_item("magic wand");
+    } else {
+        printf("\nThe cave chest is empty.\n");
+        printf("A note inside reads: \"Raided... but treasures return to those who check again.\"\n");
     }
+    return true;
+}
 
 // River room
-    bool river_room(){
-        printf("\nYou walk to the river.\n");
+bool river_room() {
+    printf("\nYou walk to the river.\n");
         
-        int event = rand() % 3;
+    int event = rand() % 4;
         
-        if (event == 0) {
-            printf("\nYou find a potion floating near the shore.\n");
-            add_item("potion"); 
+    if (event == 0) {
+        printf("\nYou find a potion floating near the shore.\n");
+        add_item("potion"); 
+    }
+    else if (event == 1) {
+        printf("\nSomething lurks near the water... It's a gnome! He runs towards you.\n");
+        if (!fight_monster(false)) {
+            return false;
         }
-        else if (event == 1) {
-            printf("\nSomething lurks near the water... Its a gnome! He runs away.\n");
-            if (!fight_monster(false)) {
-                return false;
-            }
-        }
-        else {
-            printf("\nThe river is calm you take a short rest.\n");
-        }
+    }
+    else if (event == 2) {
+        printf("\nSomething lurks near the water... It's a gnome! He runs away.\n");
+    }
+    else {
+        printf("\nThe river is calm. You take a short rest.\n");
+    }
         
+    return true;
+}
+// Temple room
+bool temple_room() {
+    printf("\nYou arrive at the ancient temple of the gods.\n");
+
+    if (!has_wand) {
+        printf("\nA magical barrier blocks you from entering the temple.\n");
+        printf("\nA glowing poneglyph says: \"Only the wand lets past.\"\n");
         return true;
     }
-// Temple room
-    bool temple_room(){
-        printf("\nYou arrive at the ancient temple of the gods.\n");
-        if (!has_wand) {
-            printf("\nA magical barrier blocks you from entering the temple.\n");
-            printf("\nA glowing poneglyph says: \"Only the wand lets past.\n ");
-            return true;
-        }
-        printf("\nYou cast a spell and the barrier disapears in your eyes.\n");
-        printf("\nYou step into the temple\n");
+    printf("\nYou cast a spell and the barrier disappears before your eyes.\n");
+    printf("\nYou step into the temple\n");
 
-        return fight_monster(true);
+    return fight_monster(true);
 
-    }
+}
 
 
 // ---------------------------
