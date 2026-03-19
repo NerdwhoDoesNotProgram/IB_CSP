@@ -335,10 +335,16 @@ bool fight_monster(bool boss) {
     if (boss) {
         enemy_health = rand() % 5 + 24; // 24 through 28
         enemy_damage_min = 2;
-        enemy_damage_max = 4;
+        enemy_damage_max = 7;
 
         printf("\n*** FINAL BOSS APPEARS! ***\n");
         printf("This enemy looks powerful... you hope you came prepared.\n");
+    } else if (!boss && strcmp(current_room, "forest") == 0) {
+        enemy_health = rand() % 3 + 8; // should be 8 to 10
+        enemy_damage_min = 1;
+        enemy_damage_max = 3;
+
+        printf("\nA monster attacks!\n");
     } else {
         enemy_health = rand() % 4 + 5; // 5 to 8
         enemy_damage_min = 1;
@@ -541,7 +547,7 @@ void play_game() {
         remove_newline(command);
         to_lowercase(command);
 
-        if (strcmp(command, "north") == 0) {
+        if (strcmp(command, "north") == 0 || strcmp(command, "n") == 0 || strcmp(command, "temple") == 0 || strcmp(command, "t") == 0) {
             // If player has the wand, they may enter the temple and fight the boss
             if (has_wand) {
                 if (!temple_room()) {
@@ -552,34 +558,34 @@ void play_game() {
                 temple_room();
             }
         }
-        else if (strcmp(command, "south") == 0) {
+        else if (strcmp(command, "south") == 0 || strcmp(command, "s") == 0 || strcmp(command, "river") == 0 || strcmp(command, "r") == 0) {
             if (!river_room()) {
                 game_running = false;
             }
         }
-        else if (strcmp(command, "east") == 0) {
+        else if (strcmp(command, "east") == 0|| strcmp(command, "e") == 0 || strcmp(command, "cave") == 0 || strcmp(command, "c") == 0) {
             if (!cave_room()) {
                 game_running = false;
             }
         }
-        else if (strcmp(command, "west") == 0) {
+        else if (strcmp(command, "west") == 0 || strcmp(command, "w") == 0 || strcmp(command, "forest") == 0 || strcmp(command, "f") == 0) {
             if (!forest_room()) {
                 game_running = false;
             }
         }
-        else if (strcmp(command, "map") == 0) {
+        else if (strcmp(command, "map") == 0 || strcmp(command, "m") == 0) {
             show_map();
         }
-        else if (strcmp(command, "inventory") == 0) {
+        else if (strcmp(command, "inventory") == 0 || strcmp(command, "i") == 0) {
             show_inventory_list();
         }
-        else if (strcmp(command, "drop") == 0) {
+        else if (strcmp(command, "drop") == 0 || strcmp(command, "d") == 0) {
             drop_item();
         }
-        else if (strcmp(command, "heal") == 0) {
+        else if (strcmp(command, "heal") == 0 || strcmp(command, "h") == 0) {
             use_potion();
         }
-        else if (strcmp(command, "quit") == 0) {
+        else if (strcmp(command, "quit") == 0 || strcmp(command, "q") == 0) {
             printf("You leave the adventure behind.\n");
             game_running = false;
         }

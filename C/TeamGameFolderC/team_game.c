@@ -331,13 +331,13 @@ bool river_room() {
         add_item("potion"); 
     }
     else if (event == 1) {
-        printf("\nSomething lurks near the water... It's a gnome! He runs towards you.\n");
+        printf("\nSomething lurks near the water... It's a gnome!🧙🏼He runs towards you.\n");
         if (!fight_monster(false)) {
             return false;
         }
     }
     else if (event == 2) {
-        printf("\nSomething lurks near the water... It's a gnome! He runs away.\n");
+        printf("\nSomething lurks near the water... It's a gnome!🧙🏼 He runs away.\n");
     }
     else {
         printf("\nThe river is calm. You take a short rest.\n");
@@ -429,7 +429,7 @@ void play_game() {
     }
 
     if (boss_defeated) {
-        printf("\nCongratulations, adventurer!\n");
+        printf("\nCongratulations, Monty Python! You acheived the the HOLY GRAIL!!\n");
     }
     else if (health <= 0) {
         printf("\nGame Over.\n");
