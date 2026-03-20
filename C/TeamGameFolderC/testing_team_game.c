@@ -476,7 +476,7 @@ bool cave_room() {  // fun room where the most over power weapon is found
 }
 
 // River room
-bool river_room() { // calm but deadly watch out for gnomes
+bool river_room() { // calm but deadly watch out for gnomes, gets prizes fro going to the room
     strcpy(current_room, "river");
 
     printf("\nYou walk to the river.\n");
@@ -504,7 +504,7 @@ bool river_room() { // calm but deadly watch out for gnomes
     return true;
 }
 
-// Temple room // be careful what you wish for... 
+// Temple room // be careful what you wish for... hardest room needs wand
 bool temple_room() {
     strcpy(current_room, "temple");
 
