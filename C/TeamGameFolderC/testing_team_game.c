@@ -277,7 +277,7 @@ void show_instructions() {
     printf("Explore the forest, cave, river, and temple.\n");
     printf("Find better weapons and potions to survive.\n");
     printf("You may need to revisit places to discover new items.\n");
-    printf("Commands: north, south, east, west, map, inventory, drop, heal, quit\n");
+    printf("Commands: north, south, east, west, map, inventory, drop, heal, instructions(in), quit\n");
     printf("In battle: fight, heal, run\n");
     printf("Goal: Defeat the final boss in the temple!\n");
     printf("========================\n\n");
@@ -578,6 +578,9 @@ void play_game() {
         }
         else if (strcmp(command, "inventory") == 0 || strcmp(command, "i") == 0) {
             show_inventory_list();
+        }
+        else if (strcmp(command, "instructions") == 0 || strcmp(command, "in") == 0) {
+            show_instructions();
         }
         else if (strcmp(command, "drop") == 0 || strcmp(command, "d") == 0) {
             drop_item();
