@@ -270,7 +270,7 @@ void reset_game() {
     }
 }
 
-// Written by IB | Edited by
+// Written by IB | Edited by RH
 // Show instructions for the player
 void show_instructions() {
     printf("\n===== HOW TO PLAY =====\n");
@@ -327,6 +327,7 @@ void show_map() {
 // ---------------------------
 // Battle System | Written by IB | Edited by RH
 // ---------------------------
+// Ststem that controls the monsters damage and health based on whether it is a boss, the dark knight, or a regular monster.
 bool fight_monster(bool boss) {
     int enemy_health;
     int enemy_damage_min;
@@ -415,7 +416,7 @@ bool fight_monster(bool boss) {
 // Room Functions | Written by RH | Edited by IB
 // ---------------------------
 // forest room
-bool forest_room() {
+bool forest_room() {  // this is the starter room where monty starts his adventure
     strcpy(current_room, "forest");
 
     printf("\nYou enter the Forest.\n");
@@ -446,7 +447,7 @@ bool forest_room() {
 }
 
 // cave room
-bool cave_room() {
+bool cave_room() {  // fun room where the most over power weapon is found
     strcpy(current_room, "cave");
 
     printf("\nYou enter the cave,👻 it looks spooky.👻👻\n"); // I added it looks spooky for affects
@@ -475,7 +476,7 @@ bool cave_room() {
 }
 
 // River room
-bool river_room() {
+bool river_room() { // calm but deadly watch out for gnomes
     strcpy(current_room, "river");
 
     printf("\nYou walk to the river.\n");
@@ -503,7 +504,7 @@ bool river_room() {
     return true;
 }
 
-// Temple room
+// Temple room // be careful what you wish for... 
 bool temple_room() {
     strcpy(current_room, "temple");
 
@@ -606,7 +607,7 @@ void play_game() {
 }
 
 // ---------------------------
-// Main Function | Written by IB | Edited by 
+// Main Function | Written by IB | Edited by RH
 // ---------------------------
 
 // Written by IB | Edited by
