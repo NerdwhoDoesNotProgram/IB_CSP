@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Art of Gardening</title>
+
+  <style>
+    body {
+      background-color: #e6f2e6;
+      color: #2e3d2f;
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      font-size: 18px;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      background-color: green;
+      color: white;
+      padding: 20px;
+      margin: 0 0 10px 0;
+      font-size: 45px;
+    }
+
+    /* FLEXBOX NAV */
+    #nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    h2 {
+      color: #2f6b3f;
+      margin-top: 30px;
+    }
+
+    h3 {
+      color: #2f6b3f;
+      margin-top: 20px;
+      margin-bottom: 5px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    /* FLEXBOX IMAGE ROW */
+    .image-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 15px 0;
+    }
+
+    img {
+      width: 45%;
+      max-width: 500px;
+      border: 4px solid rgba(128, 0, 0, 0.6);
+    }
+
+    a {
+      color: darkgreen;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* OPTIONAL CLEAN SECTION SPACING */
+    section {
+      margin-bottom: 25px;
+    }
+
+    /* SIMPLE FOOTER (extra touch) */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 15px;
+      background-color: #2f6b3f;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>The Art of Gardening</h1>
+
+  <!-- Navigation -->
+  <div id="nav">
+    <a href="#why">Why Gardening |</a>
+    <a href="#joy">Joy |</a>
+    <a href="#start">Start |</a>
+    <a href="#water">Watering |</a>
+    <a href="#rocks">Rocks & Mulch |</a>
+    <a href="#tools">Tools |</a>
+    <a href="#terms">Terms</a>
+  </div>
+
+  <section>
+    <p>Gardening is both an art and a science that helps people connect with nature while developing practical skills. This page explores why gardening matters, how to get started, and important terms every beginner should know.</p>
+  </section>
+
+  <section id="why">
+    <h2>Why Gardening Matters</h2>
+    <p>Gardening is a meaningful hobby that connects people with nature while offering physical and mental health benefits. Spending time outdoors and caring for plants can reduce stress, improve mood, and encourage activity.</p>
+    <p>Gardening also supports the environment by helping pollinators like bees and butterflies and reducing the need for store-bought produce.</p>
+  </section>
+
+  <section id="joy">
+    <h2>The Joy of Growing Things</h2>
+    <p>One of the most rewarding parts of gardening is watching something grow from start to finish. Turning a seed into a healthy plant brings a strong sense of accomplishment.</p>
+    <p>Gardening teaches patience and problem-solving. Not every plant grows perfectly, and learning how to adjust is part of the experience.</p>
+
+    <div class="image-row">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPoaaaPAbCa-kEgXxNlMXZSOaWG4NjXtf_XA&s" alt="Garden example">
+    </div>
+  </section>
+
+  <section id="start">
+    <h2>How to Start Gardening</h2>
+    <p>If you are new to gardening, starting small is the best way to build confidence.</p>
+
+    <ul>
+      <li>Choose a sunny location (at least six hours of sunlight)</li>
+      <li>Start with easy plants like herbs or lettuce</li>
+      <li>Water regularly and check soil moisture</li>
+      <li>Use basic tools like a trowel and watering can</li>
+    </ul>
+
+    <p>
+      Learn more:
+      <a href="https://www.gardeningknowhow.com/garden-how-to/planting-zones" target="_blank">
+        USDA Planting Zones
+      </a>
+    </p>
+  </section>
+
+  <section id="water">
+    <h2>Watering Wisely</h2>
+    <p>Proper watering is one of the most important parts of gardening.</p>
+
+    <ul>
+      <li>Water early morning or evening</li>
+      <li>Check soil before watering</li>
+      <li>Avoid overwatering</li>
+      <li>Water at the base of plants</li>
+    </ul>
+  </section>
+
+  <section id="rocks">
+    <h2>Rocks and Mulch</h2>
+
+    <h3>Rocks</h3>
+    <ul>
+      <li><b>Pros:</b> Long-lasting, good drainage, low maintenance</li>
+      <li><b>Cons:</b> Retains heat, does not improve soil</li>
+    </ul>
+
+    <h3>Mulch</h3>
+    <ul>
+      <li><b>Pros:</b> Improves soil, holds moisture, regulates temperature</li>
+      <li><b>Cons:</b> Needs replacement over time</li>
+    </ul>
+  </section>
+
+  <section id="tools">
+    <h2>Essential Gardening Tools</h2>
+    <ul>
+      <li>Trowel</li>
+      <li>Gloves</li>
+      <li>Watering can or hose</li>
+      <li>Pruning shears</li>
+    </ul>
+
+    <p>
+      <a href="https://www.homedepot.com/b/Outdoors-Garden-Center-Garden-Tools/N-5yc1vZbx6x" target="_blank">
+        Shop Gardening Tools
+      </a>
+    </p>
+  </section>
+
+  <section id="terms">
+    <h2>Common Gardening Terms</h2>
+
+    <h3>Plant Types</h3>
+    <ul>
+      <li><b>Annual:</b> One growing season</li>
+      <li><b>Perennial:</b> Returns yearly</li>
+      <li><b>Shrub:</b> Woody plant with multiple stems</li>
+    </ul>
+
+    <h3>Leaf Types</h3>
+    <ul>
+      <li><b>Evergreen:</b> Keeps leaves year-round</li>
+      <li><b>Deciduous:</b> Loses leaves in winter</li>
+    </ul>
+
+    <div class="image-row">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPc1o08b0ebkwEnrdVnJytoaLXij5_5aWcgg&s" alt="Evergreen tree">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFkN2rF1-lAUwug3uF0FYh61_9pNsu9tncDQ&s" alt="Deciduous tree">
+    </div>
+
+    <h3>Sun Exposure</h3>
+    <ul>
+      <li>Full sun: 6+ hours</li>
+      <li>Partial sun: 4–6 hours</li>
+      <li>Full shade: Less than 4 hours</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Created as part of a web development project • The Art of Gardening</p>
+  </footer>
+
+</body>
+</html>
