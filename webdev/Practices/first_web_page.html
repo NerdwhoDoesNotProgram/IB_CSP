@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap" rel="stylesheet">
+
   <title>The Art of Gardening</title>
 
   <style>
@@ -13,18 +17,24 @@
     }
 
     h1 {
+      font-family: "Rubik Dirt", system-ui;
+      font-weight: 400;
+      font-style: normal;
+      font-size: rem(45px);
       text-align: center;
       background-color: green;
       color: white;
       padding: 20px;
       margin: 10px;
-      font-size: 45px;
+      flex-wrap: wrap;
     }
 
     #nav {
       text-align: center;
-      margin-bottom: 15px;
       font-size: 25px;
+      background-color: whitesmoke;
+      padding: 20px;
+      border: 1px solid rgba(128, 128, 128, 0.527);
     }
 
     h2 {
@@ -57,12 +67,19 @@
     a:hover {
       text-decoration: underline;
     }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 15px;
+      background-color: #2f6b3f;
+      color: white;
+      font-size: 14px;
+    }
+
   </style>
 </head>
 <!--#84A98C-->
 <body>
-
-  <h1>The Art of Gardening</h1>
 
   <!-- Navigation Menu -->
   <div id="nav">
@@ -74,6 +91,20 @@
     <a href="#tools">Tools</a> |
     <a href="#terms">Terms</a>
   </div>
+
+    <h1>The Art of Gardening</h1>
+
+    <!--background-image--> 
+    <!--Plan for the Website
+    Navigator bar at the top of the page
+
+    title below it with an image as the background
+
+    have the introduciton paragraph below the title
+    then have sections with h2 headings and paragraphs of text
+
+    have images in between sections
+    -->
 
   <p>Gardening is both an art and a science that helps people connect with nature while learning practical skills. This page explores why gardening matters, how to get started, and important terms every beginner should know.</p>
 
@@ -226,6 +257,10 @@
     <li><b>Native:</b> Naturally grows in an area</li>
     <li><b>Invasive:</b> Spreads and harms ecosystems</li>
   </ul>
+
+   <footer>
+    <p>Created as part of a web development project • The Art of Gardening</p>
+  </footer>
 
 </body>
 </html>
