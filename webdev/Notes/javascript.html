@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #butterfly{
+            display:none;
+            width: 50%;
+        }
+    </style>
+    <title>JavaScript Notes</title>
+    <script>
+        let count = 0;
+        let img = ["https://thanksgivingpoint.org/app/uploads/2022/03/26_Tulip2_825_332.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFUEJ1EY6oiZ4hwRMSTSIKvupkkCNnYJntKw&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL_g036UbD0EFjJYNChezD8YUIOIJxEEr6jg&s"];
+        let img_count = 0;
+        function change_img() {
+            if(img_count >= img.length -1 ){
+                img_count = 0;
+            }else{
+                img_count += 1;
+            }
+            document.getElementById("butterfly").src = img[img_count];
+        }
+        function update() {
+            document.getElementById("title").style.color = document.getElementById("color-choice").value;
+            alert("Button Clicked!");
+        }
+        function add() {
+            count += 1;
+            document.getElementById("number").innerHTML = count;
+        }
+        function hover(id) {
+            document.getElementById(id).style.backgroundColor = "red";
+            document.getElementById(id).style.color = "white";
+        }
+        function unhover(id) {
+            document.getElementById(id).style.backgroundColor = "lightgray";
+            document.getElementById(id).style.color = "black";
+        }
+        function show() {
+            if(document.getElementById("butterfly").style.display == "block"){ 
+                document.getElementById("butterfly").style.display = "none";
+            }else {
+            document.getElementById("butterfly").style.display = "block";
+            } 
+        }
+        
+    </script>
+</head>
+<body>
+    <H1 id="title" onmouseover="alert('This is about JavaScript!')">JavaScript Notes</H1>
+    <input type="color" id="color-choice">
+    <button onclick="update()" id="one" onmouseover="hover('one')" onmouseout="unhover('one')">Click Me!</button>
+    <p id="number"onmouseover="show()">0</p>
+    <button onclick="add()" id="two" onmouseover="hover('two')" onmouseout="unhover('two')">Add</button>
+     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBQH8ZKmANlZq2KfXWRcP2qgchLp5j4Jf_Zw&s" alt="butterfly" id="butterfly" onmouseover="change_img()"/>
+
+</body>
+</html>
