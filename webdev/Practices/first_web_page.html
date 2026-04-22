@@ -1,266 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>The Art of Gardening</title>
 
-  <title>The Art of Gardening</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #c9d1c9;
+}
 
-  <style>
-    body {
-      background-color: #e6f2e6;
-      color: #2e3d2f;
-      font-family: Arial, sans-serif;
-      font-size: 18px;
-    }
+/* NAVBAR */
+.navbar {
+  background: #2f5e2f;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 40px;
+  position: sticky;
+  top: 0;
+}
 
-    h1 {
-      font-family: "Rubik Dirt", system-ui;
-      font-weight: 400;
-      font-style: normal;
-      font-size: rem(45px);
-      text-align: center;
-      background-color: green;
-      color: white;
-      padding: 20px;
-      margin: 10px;
-      flex-wrap: wrap;
-    }
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 6px;
+}
 
-    #nav {
-      text-align: center;
-      font-size: 25px;
-      background-color: whitesmoke;
-      padding: 20px;
-      border: 1px solid rgba(128, 128, 128, 0.527);
-    }
+/* HERO */
+.hero {
+  background-image: url("https://thanksgivingpoint.org/app/uploads/2022/03/26_Tulip2_825_332.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    h2 {
-      color: #2f6b3f;
-      margin-top: 30px;
-    }
+.hero h1 {
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 10px;
+}
 
-    h3 {
-      color: #2f6b3f;
-      margin-top: 20px;
-      margin-bottom: 0;
-    }
+/* MAIN CONTENT */
+.container {
+  width: 65%;
+  margin: auto;
+}
 
-    p {
-      line-height: 1.5;
-    }
+.card {
+  background: #e6e6e6;
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
 
-    img {
-      width: 30%;
-      margin: 10px;
-      border: 4px solid rgba(128, 0, 0, 0.587);
-    }
+h2 {
+  text-align: center;
+}
 
-    a {
-      color: darkgreen;
-      text-decoration: none;
-      font-weight: bold;
-    }
+/* IMAGE STYLING */
+img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 15px;
+}
 
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      padding: 15px;
-      background-color: #2f6b3f;
-      color: white;
-      font-size: 14px;
-    }
+/* TWO COLUMN */
+.two-column {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
 
-  </style>
+.two-column div {
+  flex: 1;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+}
+</style>
 </head>
-<!--#84A98C-->
+
 <body>
 
-  <!-- Navigation Menu -->
-  <div id="nav">
-    <a href="#why">Why Gardening</a> |
+<!-- NAVBAR -->
+<div class="navbar">
+  <div><b>Garden</b></div>
+  <div>
+    <a href="#why">Why</a> |
     <a href="#joy">Joy</a> |
     <a href="#start">Start</a> |
-    <a href="#water">Watering</a> |
-    <a href="#Rocks & Mulch">Rocks & Mulch</a> |
+    <a href="#water">Water</a> |
+    <a href="#rocks">Rocks</a> |
     <a href="#tools">Tools</a> |
     <a href="#terms">Terms</a>
   </div>
+</div>
 
-    <h1>The Art of Gardening</h1>
+<!-- HERO -->
+<div class="hero">
+  <h1>The Art of Gardening</h1>
+</div>
 
-    <!--background-image--> 
-    <!--Plan for the Website
-    Navigator bar at the top of the page
+<div class="container">
 
-    title below it with an image as the background
+<!-- INTRO -->
+<div class="card">
+  <p>
+    Gardening is both an art and a science that connects people with nature while building practical skills over time. 
+    It encourages patience, creativity, and problem-solving while offering real-world benefits like fresh food and improved well-being. 
+    Whether you are growing flowers, vegetables, or trees, gardening creates a meaningful connection between effort and growth.
+  </p>
+</div>
 
-    have the introduciton paragraph below the title
-    then have sections with h2 headings and paragraphs of text
+<!-- WHY -->
+<div class="card" id="why">
+  <h2>Why Gardening Matters</h2>
 
-    have images in between sections
-    -->
-
-  <p>Gardening is both an art and a science that helps people connect with nature while learning practical skills. This page explores why gardening matters, how to get started, and important terms every beginner should know.</p>
-
-  <h2 id="why">Why Gardening Matters</h2>
-  <p>Gardening is a meaningful hobby that connects people with nature while offering important physical and mental health benefits. Spending time outdoors, caring for plants, and working with soil can reduce stress, improve mood, and encourage regular physical activity.</p>
-
-  <p>Gardening also has a positive impact on the environment. Growing your own plants can support local wildlife, especially pollinators like bees and butterflies, and reduce the need for store-bought produce.</p>
-
-  <h2 id="joy">The Joy of Growing Things</h2>
-  <p>One of the most rewarding parts of gardening is watching something grow from start to finish. Turning a small seed into a healthy plant takes time and care, but it brings a strong sense of accomplishment.</p>
-
-  <p>Gardening teaches patience and problem-solving. Not every plant grows perfectly, and learning how to adjust is part of the experience.</p>
-
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPoaaaPAbCa-kEgXxNlMXZSOaWG4NjXtf_XA&s" alt="Gardening example">
-
-  <h2 id="start">How to Start Gardening</h2>
-  <p>If you are new to gardening, starting small is the best way to learn and build confidence.</p>
-
-  <ul>
-    <li>Choose a sunny location (at least six hours of sunlight)</li>
-    <li>Start with easy plants like herbs or lettuce</li>
-    <li>Water regularly and check soil moisture</li>
-    <li>Use basic tools like a trowel and watering can</li>
-  </ul>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBQH8ZKmANlZq2KfXWRcP2qgchLp5j4Jf_Zw&s">
 
   <p>
-    Learn more here:
-    <a href="https://www.gardeningknowhow.com/garden-how-to/planting-zones" target="_blank">
-      USDA Planting Zones
-    </a>
+    Gardening provides both physical and mental health benefits. Spending time outdoors, working with soil, and caring for plants 
+    can reduce stress, improve mood, and encourage regular physical activity. It also teaches responsibility and patience as plants 
+    require consistent care over time.
   </p>
 
-  <h2 id="water">Watering Wisely</h2>
-  <p>Proper watering is one of the most important parts of gardening. Too much or too little water can harm plants.</p>
+  <p>
+    In addition, gardening has a positive impact on the environment. It supports pollinators like bees and butterflies, improves air 
+    quality, and helps create more sustainable ecosystems. Growing your own plants can also reduce reliance on store-bought products.
+  </p>
+</div>
 
-  <ul>
-    <li>Water early in the morning or evening</li>
-    <li>Check soil before watering</li>
-    <li>Avoid overwatering</li>
-    <li>Water at the base of the plant</li>
-  </ul>
+<!-- JOY -->
+<div class="card" id="joy">
+  <h2>The Joy of Growing Things</h2>
 
-  <p>Different plants have different water needs, so it is important to learn what works best.</p>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFUEJ1EY6oiZ4hwRMSTSIKvupkkCNnYJntKw&s">
 
-<!--https://www.pintersgardensandpumpkins.com/pinters-post/rock-vs-mulch-choosing-the-best-option-for-your-plant-beds#:~:text=For%20example%2C%20you%20could%20use,vegetable%20gardens%20or%20flower%20beds.-->
+  <p>
+    Watching a plant grow from seed to maturity is one of the most rewarding parts of gardening. It builds patience and creates a strong 
+    sense of accomplishment as your effort turns into something living and thriving.
+  </p>
 
-  <h2 id="Rocks & Mulch">
-    Rocks and Mulch: The Unsung Heroes of Gardening
-  </h2>
-  <p>When it comes to landscaping and gardening, one of the key decisions you’ll need to make is what type of material to use in your plant beds. Two popular choices are rocks and mulch, each with its own set of advantages and disadvantages. In this blog post, we’ll explore the differences between rock and mulch and help you decide which option is best for your garden.</p>
+  <p>
+    Gardening also teaches adaptability and problem-solving. Not every plant grows perfectly, and learning how to adjust watering, sunlight, 
+    and soil conditions is part of the experience. These small challenges make success even more satisfying.
+  </p>
+</div>
 
-  <h3>Rock</h3>
-    <ul>
-        <li><b>Advantages:</b>
-            <ul>
-                <li><b>Longevity:</b> Rocks are incredibly durable and can last for many years without needing to be replaced. This makes them a low-maintenance option for plant beds.</li>
-                <li><b>Weed Control:</b> When used with landscape fabric, rocks create a barrier that prevents weeds from germinating and growing. This can significantly reduce the amount of time and effort spent on weeding.</li>
-                <li><b>Drainage:</b> Rocks allow water to drain quickly, which can be beneficial for plants that prefer drier soil conditions.</li>
-                <li><b>Aesthetics:</b> Rocks come in a variety of shapes, sizes, and colors, allowing you to create a customized look for your plant beds.</li>
-            </ul>
-        </li>
-        <li><b>Disadvantages:</b>
-            <ul>
-                <li><b>Heat Retention:</b> Rocks can absorb and retain heat, which may increase soil temperature and affect plant growth, especially in hot climates.</li>
-                <li><b>Limited Nutrients:</b> Unlike organic mulches, rocks do not decompose and add nutrients to the soil over time. This means you may need to supplement with fertilizer more frequently.</li>
-            </ul>
-        </li>
-    </ul>
+<!-- START -->
+<div class="card" id="start">
+  <h2>How to Start Gardening</h2>
 
-    <h3>Mulch</h3>
-    <ul>
-        <li><b>Advantages:</b>
-            <ul>
-                <li><b>Soil Health:</b> Organic mulches, such as wood chips or shredded bark, break down over time, adding organic matter to the soil and improving its structure and fertility.</li>
-                <li><b>Moisture Retention:</b> Mulch helps retain moisture in the soil, reducing the need for frequent watering and helping plants withstand drought conditions.</li>
-                <li><b>Temperature Regulation:</b> Mulch acts as insulation, helping to moderate soil temperature and protect plant roots from extreme heat or cold.</li>
-                <li><b>Weed Suppression:</b> Mulch can help suppress weed growth by blocking sunlight and preventing weed seeds from germinating.</li>
-            </ul>
-        </li>
-        <li><b>Disadvantages:</b>
-            <ul>
-                <li><b>Replacement:</b> Organic mulches decompose over time and will need to be replenished periodically, typically every 1-3 years.</li>
-                <li><b>Color Fade:</b> Mulch color over time will fade.</li>
-            </ul>
-        </li>
-    </ul>
+  <div class="two-column">
+    <div>
+      <p>
+        Starting a garden does not have to be complicated. Beginning with a simple plan and a few easy plants can help you build confidence 
+        while learning the basics of plant care and maintenance.
+      </p>
 
-  <p> You could use rocks in areas where weed control and drainage are paramount, such as around shrubs or in high-traffic areas, and use mulch in areas where soil health and moisture retention are more important, such as around vegetable gardens or flower beds.</p>
+      <ul>
+        <li>Choose a sunny location (6+ hours)</li>
+        <li>Start with easy plants (herbs, lettuce)</li>
+        <li>Water regularly</li>
+        <li>Use basic tools</li>
+      </ul>
+    </div>
 
-  <h2 id="tools">Essential Gardening Tools and Equipment</h2>
-  <p>Basic tools include:</p>
+    <div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL_g036UbD0EFjJYNChezD8YUIOIJxEEr6jg&s">
+    </div>
+  </div>
+</div>
+
+<!-- WATER -->
+<div class="card" id="water">
+  <h2>Watering Wisely</h2>
+
+  <div class="two-column">
+    <div>
+      <p>
+        Proper watering is one of the most important parts of keeping plants healthy. Understanding when and how to water can prevent 
+        common problems like root rot or dehydration.
+      </p>
+
+      <ul>
+        <li>Water early morning or evening</li>
+        <li>Check soil before watering</li>
+        <li>Water at the base</li>
+      </ul>
+    </div>
+
+    <div>
+      <p>
+        Avoid overwatering — most plants prefer consistent moisture rather than soaked soil. Learning your plant’s needs will help you 
+        develop a routine that keeps them thriving.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ROCKS VS MULCH -->
+<div class="card" id="rocks">
+  <h2>Rocks vs Mulch</h2>
+
+  <p>
+    Choosing between rocks and mulch depends on your gardening goals. Mulch improves soil and supports plant growth, while rocks provide 
+    a long-lasting and low-maintenance option. Each has benefits and drawbacks depending on how you want your garden to function.
+  </p>
+
+  <div class="two-column">
+    <div>
+      <h3>Rock</h3>
+      <ul>
+        <li>Long-lasting and durable</li>
+        <li>Low maintenance once installed</li>
+        <li>Great for drainage</li>
+        <li>Does not decompose</li>
+        <li>Can retain heat and stress plants</li>
+        <li>Higher upfront cost</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Mulch</h3>
+      <ul>
+        <li>Improves soil health</li>
+        <li>Retains moisture</li>
+        <li>Regulates temperature</li>
+        <li>Adds nutrients over time</li>
+        <li>Helps control weeds</li>
+        <li>Needs replacement over time</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="two-column">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNLCvO8_vWSUVzDQcqVFvOiY8tHlzDGootoA&s">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUpSkEJzF1TbzfjjEijnGUeI-mz3ziH6pnow&s">
+  </div>
+
+  <p>
+    Mulch is often preferred for gardens because it breaks down and enriches the soil while helping retain moisture and regulate 
+    temperature :contentReference[oaicite:0]{index=0}. Rocks, on the other hand, are more permanent and require less maintenance but do not provide nutrients and can 
+    increase soil temperature in hot conditions :contentReference[oaicite:1]{index=1}.
+  </p>
+</div>
+
+<!-- TOOLS -->
+<div class="card" id="tools">
+  <h2>Essential Tools</h2>
+
+  <p>
+    Having the right tools makes gardening easier and more enjoyable. Basic tools help you plant, maintain, and care for your garden 
+    efficiently without unnecessary effort.
+  </p>
 
   <ul>
     <li>Trowel</li>
     <li>Gloves</li>
-    <li>Watering can or hose</li>
+    <li>Watering can</li>
     <li>Pruning shears</li>
   </ul>
+</div>
+
+<!-- TERMS -->
+<div class="card" id="terms">
+  <h2>Basic Terms</h2>
 
   <p>
-    <a href="https://www.homedepot.com/b/Outdoors-Garden-Center-Garden-Tools/N-5yc1vZbx6x" target="_blank">
-      Shop Gardening Tools
-    </a>
+    Understanding common gardening terms helps you make better decisions when choosing plants and caring for them. These simple definitions 
+    are useful when getting started.
   </p>
 
-  <h2 id="terms">Common Gardening Terms</h2>
-
-  <h3>Basic Types of Plants</h3>
   <ul>
-    <li><b>Annual:</b> One growing season</li>
-    <li><b>Perennial:</b> Returns each year</li>
-    <li><b>Shrub:</b> Woody plant with multiple stems</li>
+    <li><b>Annual:</b> One season</li>
+    <li><b>Perennial:</b> Returns yearly</li>
+    <li><b>Full Sun:</b> 6+ hours</li>
+    <li><b>Shade:</b> Less than 4 hours</li>
   </ul>
 
-  <h3>Leaf Types</h3>
-  <ul>
-    <li><b>Evergreen:</b> Keeps leaves year-round</li>
-    <li><b>Deciduous:</b> Loses leaves in winter</li>
-  </ul>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuAqd6A8eKWHWLV-4A-FTMWhoCmV297HH0JA&s">
+</div>
 
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPc1o08b0ebkwEnrdVnJytoaLXij5_5aWcgg&s" alt="Evergreen tree">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFkN2rF1-lAUwug3uF0FYh61_9pNsu9tncDQ&s" alt="Deciduous tree">
+<!-- FINAL -->
+<div class="card">
+  <h2>Final Thoughts</h2>
+  <p>
+    Gardening is more than just growing plants — it is about building a connection with nature and learning through experience. 
+    Every step, whether small or large, brings new knowledge and satisfaction.
+  </p>
+</div>
 
-  <h3>Growing Zones</h3>
-  <p>Growing zones are based on the average lowest winter temperature in a region. Knowing your zone helps you choose plants that will survive in your climate.</p>
+</div>
 
-  <h3>Sun Exposure</h3>
-  <ul>
-    <li><b>Full sun:</b> 6+ hours</li>
-    <li><b>Partial sun:</b> 4–6 hours</li>
-    <li><b>Full shade:</b> Less than 4 hours</li>
-    <li><b>Dappled shade:</b> A mix of sun and shade</li>
-  </ul>
-
-  <h3>Plant Habit (Growth Pattern)</h3>
-  <p>The habit of a plant refers to its natural shape or growth pattern.</p>
-  <ul>
-    <li><b>Climbing:</b> Grows upward with support</li>
-    <li><b>Clump-forming:</b> Grows in clusters</li>
-    <li><b>Mounded:</b> Rounded shape</li>
-    <li><b>Spreading:</b> Grows across the ground</li>
-    <li><b>Trailing:</b> Cascades over edges</li>
-    <li><b>Upright:</b> Grows straight up</li>
-  </ul>
-
-  <h3>Other Terms</h3>
-  <ul>
-    <li><b>Height & Spread:</b> Mature size of a plant</li>
-    <li><b>Frost Date:</b> First or last frost timing</li>
-    <li><b>Native:</b> Naturally grows in an area</li>
-    <li><b>Invasive:</b> Spreads and harms ecosystems</li>
-  </ul>
-
-   <footer>
-    <p>Created as part of a web development project • The Art of Gardening</p>
-  </footer>
+<footer>
+  The Art of Gardening • Web Project
+</footer>
 
 </body>
 </html>
