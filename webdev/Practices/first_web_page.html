@@ -8,6 +8,49 @@
 <title>The Art of Gardening</title>
 
 <style>
+.side-resources {
+  position: fixed;
+  top: 350px;
+  width: 12%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.side-resources.left {
+  left: 2.75%;
+}
+
+.side-resources.right {
+  right: 2.75%;
+}
+
+.resource-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.resource-card:hover {
+  transform: scale(1.05);
+}
+
+.resource-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.resource-card p {
+  padding: 8px;
+  font-size: 14px;
+}
+
 body {
   margin: 0;
   font-family: "Playfair Display", Helvetica, serif, Arial, sans-serif;
@@ -78,7 +121,7 @@ h2 {
 /* IMAGE STYLING */
 img {
   width: 100%;
-  max-height: 220px;
+  max-height: 300px;
   object-fit: cover;
   border-radius: 10px;
   margin-top: 15px;
@@ -100,10 +143,120 @@ footer {
   text-align: center;
   padding: 20px;
 }
+
+/* IMAGE CONTAINER */
+.image-container {
+  position: relative;        /* needed for overlay positioning */
+  width: 100%;
+  max-width: 600px;          /* keeps things from getting too wide */
+  margin: 20px auto;
+  overflow: hidden;          /* prevents overlay spill */
+  border-radius: 10px;
+}
+
+/* IMAGE */
+.image-container img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  transition: 0.3s ease;     /* smooth zoom */
+}
+
+/* OVERLAY (hidden by default) */
+.overlay {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -40%); /* slightly above center initially */
+
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+
+  padding: 20px 25px;
+  border-radius: 10px;
+
+  text-align: center;
+  width: 88%;
+  height: 74%;
+
+  opacity: 0;                /* hidden */
+  transition: 0.3s ease;
+}
+
+/* SHOW OVERLAY ON HOVER */
+.image-container:hover .overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%); /* settles into center */
+}
+
+/* OPTIONAL: IMAGE ZOOM ON HOVER */
+.image-container:hover img {
+  transform: scale(1.03);
+}
+
+/* TEXT STYLING */
+.overlay h3 {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+}
+
+.overlay p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
 </style>
+<script>
+  function toggleExtra() {
+  let content = document.getElementById("extraContent");
+
+  if (content.style.display === "none") {
+    content.style.display = "block";
+  } else {
+    content.style.display = "none";
+  }
+}
+
+function swapImage() {
+  document.getElementById("hoverImage").src =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyXRu_cW9p8GZh3Qgz_KcxIktRx02Yg8q5uQ&s";
+}
+
+function swapBack() {
+  document.getElementById("hoverImage").src =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyG6UjXYN_AlUFzamlyGTVWxY3u69OlpSWFw&s";
+}
+</script>
+<!--https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyG6UjXYN_AlUFzamlyGTVWxY3u69OlpSWFw&s-->
+<!--https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFUEJ1EY6oiZ4hwRMSTSIKvupkkCNnYJntKw&s-->
 </head>
 
 <body>
+
+  <div class="side-resources left">
+  <a href="https://thanksgivingpoint.org" target="_blank" class="resource-card">
+    <img src="https://thanksgivingpoint.org/app/uploads/2022/03/26_Tulip2_825_332.jpg">
+    <p>Visit Ashton Gardens</p>
+  </a>
+
+  <a href="https://www.bhg.com/gardening/flowers/" target="_blank" class="resource-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL_g036UbD0EFjJYNChezD8YUIOIJxEEr6jg&s">
+    <p>Best Spring Flowers</p>
+  </a>
+</div>
+
+<div class="side-resources right">
+  <a href="https://www.gardeners.com/how-to/" target="_blank" class="resource-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFUEJ1EY6oiZ4hwRMSTSIKvupkkCNnYJntKw&s">
+    <p>Beginner Gardening Tips</p>
+  </a>
+
+  <a href="https://www.almanac.com/gardening/planting-calendar" target="_blank" class="resource-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBQH8ZKmANlZq2KfXWRcP2qgchLp5j4Jf_Zw&s">
+    <p>Planting Calendar</p>
+  </a>
+</div>
 
 <!-- NAVBAR -->
 <div class="navbar">
@@ -139,7 +292,18 @@ footer {
 <div class="card" id="why">
   <h2>Why Gardening Matters</h2>
 
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBQH8ZKmANlZq2KfXWRcP2qgchLp5j4Jf_Zw&s">
+
+  <div class="image-container">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyG6UjXYN_AlUFzamlyGTVWxY3u69OlpSWFw&s" alt="Butterfly">
+
+  <div class="overlay">
+    <h3>Monarch Butterflies</h3>
+    <p>Vital pollinators and important for ecosystems.</p>
+  </div>
+</div>
+
+
+<p id="imageDesc">Hover over the image to learn more!</p>
 
   <p>
     Gardening provides both physical and mental health benefits. Spending time outdoors, working with soil, and caring for plants 
@@ -151,13 +315,24 @@ footer {
     In addition, gardening has a positive impact on the environment. It supports pollinators like bees and butterflies, improves air 
     quality, and helps create more sustainable ecosystems. Growing your own plants can also reduce reliance on store-bought products.
   </p>
+
+  <button onclick="toggleExtra()" class="info-btn">Show More</button>
+
+<div id="extraContent" style="display:none;">
+  <p>
+    Gardening also helps support biodiversity by creating habitats for insects,
+    birds, and pollinators. Small changes like planting native species can have
+    a big impact on the environment.
+  </p>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuAqd6A8eKWHWLV-4A-FTMWhoCmV297HH0JA&s" style="width:100%; border-radius:10px;">
+</div>
 </div>
 
 <!-- JOY -->
 <div class="card" id="joy">
   <h2>The Joy of Growing Things</h2>
 
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFUEJ1EY6oiZ4hwRMSTSIKvupkkCNnYJntKw&s">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFUEJ1EY6oiZ4hwRMSTSIKvupkkCNnYJntKw&s" alt="Spring Flowers">
 
   <p>
     Watching a plant grow from seed to maturity is one of the most rewarding parts of gardening. It builds patience and creates a strong 
