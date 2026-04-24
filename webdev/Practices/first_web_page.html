@@ -10,11 +10,11 @@
 <style>
 .side-resources {
   position: fixed;
-  top: 20%;
+  top: 32%;
   width: 14%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 45px;
 }
 
 .side-resources.left {
@@ -42,13 +42,13 @@
 
 .resource-card img {
   width: 100%;
-  height: 100px;
+  height: 150px;
   object-fit: cover;
 }
 
 .resource-card p {
-  padding: 8px;
-  font-size: 14px;
+  padding: 15px;
+  font-size: 16px;
 }
 
 body {
@@ -86,7 +86,7 @@ body {
   background-image: url("https://thanksgivingpoint.org/app/uploads/2022/03/26_Tulip2_825_332.jpg");
   background-size: cover;
   background-position: center;
-  height: 260px;
+  height: 280px;
   font-size: xx-large;
   display: flex;
   justify-content: center;
@@ -143,6 +143,14 @@ footer {
   text-align: center;
   padding: 20px;
 }
+#footerContent {
+  background: #e6e6e6;
+  padding: 20px;
+  margin: auto;
+  width: 65%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
 
 /* IMAGE CONTAINER */
 .image-container {
@@ -177,7 +185,7 @@ footer {
 
   text-align: center;
   width: 95%;
-  height: 85%;
+  height: 87%;
 
   opacity: 0;                /* hidden */
   transition: 0.3s ease;
@@ -205,6 +213,11 @@ footer {
   font-size: 15px;
   line-height: 1.4;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+
 
 </style>
 <script>
@@ -227,6 +240,15 @@ function swapBack() {
   document.getElementById("hoverImage").src =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1oUXlLN8ranMnsQCgMk6SUAKAEVga_Lfytg&s";
 }
+function toggleFooter() {
+  let content = document.getElementById("footerContent");
+
+  if (content.style.display === "none") {
+    content.style.display = "block";
+  } else {
+    content.style.display = "none";
+  }
+}
 </script>
 <!--https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyG6UjXYN_AlUFzamlyGTVWxY3u69OlpSWFw&s-->
 <!--https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFUEJ1EY6oiZ4hwRMSTSIKvupkkCNnYJntKw&s-->
@@ -236,7 +258,7 @@ function swapBack() {
 
   <!-- NAVBAR -->
 <div class="navbar">
-  <div><b>Garden</b></div>
+  <div><a href="#footer"><b>Garden</b></a></div>
   <div>
     <a href="#why">Why</a> |
     <a href="#joy">Joy</a> |
@@ -300,7 +322,7 @@ function swapBack() {
 
   <div class="overlay">
     <h3>Monarch Butterflies</h3>
-    <p>Vital pollinators and important for ecosystems.</p>
+    <p>Monarch butterflies are vital pollinators and important for ecosystems. They are renowned for their incredible 3,000-mile migration, poisonous defense mechanism, and unique lifecycle. They are the only butterflies known to make such a long, two-way migration, with some living up to nine months to complete the journey.</p>
   </div>
 </div>
 
@@ -321,12 +343,19 @@ function swapBack() {
   <button onclick="toggleExtra()" class="info-btn">Show More</button>
 
 <div id="extraContent" style="display:none;">
+ <div class="two-column">
+  <div>
   <p>
     Gardening also helps support biodiversity by creating habitats for insects,
     birds, and pollinators. Small changes like planting native species can have
     a big impact on the environment.
   </p>
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuAqd6A8eKWHWLV-4A-FTMWhoCmV297HH0JA&s" style="width:100%; border-radius:10px;">
+  </div>
+  <div>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5nvFirw558vGitxZIro2M8_snpTscYefY_Q&s" style="width:100%; border-radius:10px;">
+    </div>
+    <!--https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxFxXsbmaEqzgeJC9fSy-cUHvMdEhUcQNS-Oxe_GNATtdNOz0Dtb60Z3u-_htGQY50pPuaKwjaOYptp4Yk4gE2PGwRQljvLTrl3zC56jnC&s=0HH0JA&s-->
+</div>
 </div>
 </div>
 <!--https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFUEJ1EY6oiZ4hwRMSTSIKvupkkCNnYJntKw&s-->
@@ -441,8 +470,8 @@ function swapBack() {
 
   <p>
     Mulch is often preferred for gardens because it breaks down and enriches the soil while helping retain moisture and regulate 
-    temperature :contentReference[oaicite:0]{index=0}. Rocks, on the other hand, are more permanent and require less maintenance but do not provide nutrients and can 
-    increase soil temperature in hot conditions :contentReference[oaicite:1]{index=1}.
+    temperature. Rocks, on the other hand, are more permanent and require less maintenance but do not provide nutrients and can 
+    increase soil temperature in hot conditions.
   </p>
 </div>
 
@@ -493,9 +522,30 @@ function swapBack() {
 
 </div>
 
-<footer>
-  The Art of Gardening • Web Project
+
+<footer id="footer" onclick="toggleFooter()" style="cursor: pointer;">
+  <p><b>The Art of Gardening • Web Project</b></p>
+
+  <!-- HIDDEN CONTENT -->
+  <div id="footerContent" style="display: none; margin-top: 15px;">
+    
+    <p>
+      Hi, I’m Your ! Much like a garden, this website started as a tiny seed of code and has grown into a full web development project. I built this to explore the intersection of nature and technology, focusing on how a clean structure and thoughtful design can help information bloom. If you're reading this, thanks for helping my coding skills grow this semester!
+    </p>
+
+    <img 
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTpm8UkqfPyQp8ukx0jPZeHX_Omvo0DQQ-nw&s" 
+    alt="An illustration of a digital greenhouse with plants made of circuits" 
+    style="width: 300px; border-radius: 10px;">
+
+  <p>
+      Just like a garden, this website is a work in progress. I hope it inspires you to get outside and start your own gardening journey, or at least appreciate the beauty of nature in a new way. Thanks for visiting!
+    </p>
+  </p>
+
+  </div>
 </footer>
+
 
 </body>
 </html>
