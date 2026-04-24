@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Notes about anvanced HTML</title>
+        <meta charset="UTF-8"/>
+        <!--Embeded style sheets go inside the head tag-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+        <style>
+            body{
+                background-color: rgba(94, 8, 113, 0.505);
+                font-family: "Syne Mono", monospace;
+                font-weight: 400;
+                font-style: normal;
+            }
+            img{
+                width: 250px;
+                border: 4px inset gold;
+            }
+            #unordered{
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+            #ordered{
+                color: teal;
+                background-color: blanchedalmond;
+            }
+            .odd{
+                background-color: gray;
+                color: orange;
+            }
+            p{
+                background-color: red;
+                color: #8ff324;
+                background-color: blueviolet;
+                text-align: right;
+            }
+            h1{
+                text-align: center;
+                font-size: 5em;
+                border: 3px solid white;
+            }
+            .bold{
+                font-weight: bolder;
+                color: red;
+            }
+            #italics{
+                font-style: italic;
+            }
+            .box{
+                background-color: aquamarine; 
+                height: 100px; 
+                width: 100px; 
+                border: 3px solid green;
+                font-variant: small-caps;
+                margin: 20px;
+                padding: 10px;
+            }
+            #box-wrapper{
+                display: block;
+                margin: auto;
+                width: 50%;
+            }
+            #lists-wrapper{
+                display: grid;
+                grid-template-columns: 50% 50%;
+            }
+            #images-wrapper{
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <h1>HTML <span id="italics">Advanced</span> Notes</h1>
+        <!--This is inline CSS. . . That is bad syntax!-->
+    <div id="box-wrapper">
+        <div class="box">
+            <p>This is in the div</p>
+        </div>
+    </div>
+<div id="lists-wrapper">
+        <div id="ordered">
+        <p>This is how we make an ordered (Numbered) list</p>
+        <ol>
+            <li class="odd">Computer Science Principals</li>
+            <li>Computer programming 1</li>
+            <li class="odd">Computer programming 2</li>
+            <li>Advanced computer programming</li>
+        </div>
+        </ol>
+        <div id="unordered">
+        <p>This is how you make an <span class="bold">unordered (Bulleted)</span> list</p>
+        <ul style="list-style-type: circle;">
+            <li class="odd">Apple</li>
+            <li >Orange</li>
+            <li class="odd">Banana</li>
+            <li>Peach</li>
+        </ul>
+         </div>
+</div>
+        <a href="https://www.w3schools.com/html/html_lists_unordered.asp" target="_blank">W3Schools Unordered List Page</a><br>
+
+        <div id="images-wrapper">
+        <img src="https://images.squarespace-cdn.com/content/v1/63c60d44c98af85334537583/644359f9-c213-4d77-bdb0-b78b7f8424f3/Mount_Timpanogos_at_sunset.jpg" alt="MT Timp at sunset"/>
+         <img src="https://images.squarespace-cdn.com/content/v1/63c60d44c98af85334537583/644359f9-c213-4d77-bdb0-b78b7f8424f3/Mount_Timpanogos_at_sunset.jpg" alt="MT Timp at sunset"/>
+          <img src="https://images.squarespace-cdn.com/content/v1/63c60d44c98af85334537583/644359f9-c213-4d77-bdb0-b78b7f8424f3/Mount_Timpanogos_at_sunset.jpg" alt="MT Timp at sunset"/>
+           <img src="https://images.squarespace-cdn.com/content/v1/63c60d44c98af85334537583/644359f9-c213-4d77-bdb0-b78b7f8424f3/Mount_Timpanogos_at_sunset.jpg" alt="MT Timp at sunset"/>
+            <img src="https://images.squarespace-cdn.com/content/v1/63c60d44c98af85334537583/644359f9-c213-4d77-bdb0-b78b7f8424f3/Mount_Timpanogos_at_sunset.jpg" alt="MT Timp at sunset"/>
+             <img src="https://images.squarespace-cdn.com/content/v1/63c60d44c98af85334537583/644359f9-c213-4d77-bdb0-b78b7f8424f3/Mount_Timpanogos_at_sunset.jpg" alt="MT Timp at sunset"/>
+              <img src="https://images.squarespace-cdn.com/content/v1/63c60d44c98af85334537583/644359f9-c213-4d77-bdb0-b78b7f8424f3/Mount_Timpanogos_at_sunset.jpg" alt="MT Timp at sunset"/>
+        </div>
+    </body>
+
+</html>
