@@ -1,0 +1,101 @@
+/* GENERAL PAGE STYLING */
+body {
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-color: #e6f2f5; /* light sky blue */
+    color: #1f3d2b; /* dark green text */
+}
+
+/* HEADER */
+header {
+    background-color: #2f5d50; /* forest green */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* MAIN CONTAINER */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* SECTIONS */
+section {
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+/* HEADINGS */
+h1, h2 {
+    margin-bottom: 10px;
+}
+
+/* LIST */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* IMAGE GALLERY */
+.image-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.image-row img {
+    width: 30%;
+    min-width: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.image-row img:hover {
+    transform: scale(1.05);
+}
+
+/* BUTTON */
+button {
+    padding: 10px 15px;
+    background-color: #2f5d50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3e7d6c;
+}
+
+/* HIDDEN CONTENT */
+#hiddenContent {
+    margin-top: 15px;
+}
+
+/* NAV LINK */
+.nav {
+    text-align: center;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    background-color: #2f5d50;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.nav a:hover {
+    background-color: #3e7d6c;
+}

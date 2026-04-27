@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Mount Timpanogos: Utah’s Hidden Adventure</h1>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- DESCRIPTION -->
+        <section class="description">
+            <p>
+                Mount Timpanogos is one of Utah’s most iconic and rewarding outdoor destinations, offering breathtaking alpine views, diverse trails, and unforgettable experiences. Visitors from across the country come to hike its scenic paths, explore its caves, and witness stunning locations like Emerald Lake near the summit. Whether you visit in the summer for wildflowers, the fall for vibrant colors, or at sunset for incredible views, Mount Timpanogos is a must-see adventure.
+            </p>
+        </section>
+
+        <!-- REASONS LIST -->
+        <section class="reasons">
+            <h2>Why Visit Mount Timpanogos?</h2>
+            <ul>
+                <li>Beautiful alpine views and panoramic scenery</li>
+                <li>Emerald Lake at the summit</li>
+                <li>Access to Timpanogos Cave National Monument</li>
+                <li>Unique seasonal experiences (wildflowers, fall colors, snow)</li>
+                <li>Historic and interesting locations like the old bomber crash site</li>
+            </ul>
+        </section>
+
+        <!-- IMAGE GALLERY -->
+        <section class="gallery">
+            <h2>Explore the Views</h2>
+
+            <div class="image-row">
+
+                <!-- Hover Image -->
+                <img id="hoverImage"
+                     src="{{ url_for('static', filename='images/timp_day.jpg') }}"
+                     alt="Mount Timpanogos Day View">
+
+                <img src="{{ url_for('static', filename='images/emerald_lake.jpg') }}"
+                     alt="Emerald Lake">
+
+                <img src="{{ url_for('static', filename='images/timp_fall.jpg') }}"
+                     alt="Timpanogos Fall Colors">
+
+            </div>
+        </section>
+
+        <!-- SHOW / HIDE SECTION -->
+        <section class="extra">
+            <button onclick="toggleContent()">Show Hidden Facts</button>
+
+            <div id="hiddenContent" style="display: none;">
+                <p>
+                    Mount Timpanogos is home to a semi-permanent ice field, which was once considered the only glacier in Utah. The mountain also has a fascinating history, including a Cold War-era bomber crash site and deep cultural significance in local legends. Exploring beyond the main trail reveals even more hidden beauty and stories.
+                </p>
+
+                <img src="{{ url_for('static', filename='images/timp_sunset.jpg') }}"
+                     alt="Timpanogos Sunset">
+            </div>
+        </section>
+
+        <!-- NAVIGATION (for your extra page later) -->
+        <section class="nav">
+            <a href="/explore">Explore More →</a>
+        </section>
+
+    </main>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
