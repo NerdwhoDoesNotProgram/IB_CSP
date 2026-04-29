@@ -8,6 +8,10 @@ def home():
 
 @app.route('/explore')
 def explore():
-    return "<h1>Explore Page Coming Soon</h1>"
+    return render_template('explore.html')
+
+@app.route('/secret')
+def secret():
+    return render_template('secret.html')
 
 app.run(debug=True)
