@@ -45,6 +45,14 @@ li {
 }
 
 /* IMAGE GALLERY */
+img {
+  width: auto;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
 .image-row {
     display: flex;
     justify-content: space-around;
@@ -58,6 +66,7 @@ li {
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
+
 
 /* HOVER EFFECT */
 .image-row img:hover {
