@@ -13,7 +13,7 @@ function toggleContent() {
 }
 
 function toggleImages() {
-    const content = document.getElementById("gallery");
+    const content = document.getElementById("hiddenGallery");
     const button = document.querySelector("button");
 
     if (content.style.display === "none") {
