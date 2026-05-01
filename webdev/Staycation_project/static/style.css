@@ -45,7 +45,7 @@ li {
 }
 
 /* IMAGE GALLERY */
-img {
+img, #animal {
   width: auto;
   max-height: 360px;
   object-fit: cover;
@@ -53,14 +53,22 @@ img {
   margin-top: 15px;
 }
 
-.image-row {
+/*#animal {
+    width: auto;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 15px;
+} */
+
+.image-row, #animal {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 15px;
 }
 
-.image-row img {
+.image-row img, #animal {
     width: 30%;
     min-width: 200px;
     border-radius: 10px;
@@ -69,9 +77,11 @@ img {
 
 
 /* HOVER EFFECT */
-.image-row img:hover {
+.image-row img:hover, #animal:hover {
     transform: scale(1.05);
 }
+
+
 
 /* BUTTON */
 button {
