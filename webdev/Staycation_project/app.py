@@ -14,4 +14,4 @@ def explore():
 def secret():
     return render_template('secret.html')
 
-app.run(debug=True)
+app.run()
