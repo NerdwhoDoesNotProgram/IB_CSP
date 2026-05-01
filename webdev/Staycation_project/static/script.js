@@ -12,6 +12,19 @@ function toggleContent() {
     }
 }
 
+function toggleImages() {
+    const content = document.getElementById("gallery");
+    const button = document.querySelector("button");
+
+    if (content.style.display === "none") {
+        content.style.display = "block";
+        button.textContent = "Hide image gallery";
+    } else {
+        content.style.display = "none";
+        button.textContent = "Show image gallery";
+    }
+}
+
 
 // HOVER IMAGE SWAP
 const hoverImage = document.getElementById("hoverImage");
