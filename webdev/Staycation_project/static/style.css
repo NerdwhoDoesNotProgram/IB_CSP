@@ -62,6 +62,7 @@ img, #animal {
 }
 
 .image-row img, #animal {
+    justify-content: center;
     width: 30%;
     min-width: 200px;
     border-radius: 10px;
@@ -90,9 +91,14 @@ img, #animal {
     object-fit: cover;
 }
 
-/* .gallery {
-    text-align: center;
-} */
+.gallery {
+    margin-left: 5%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+}
 
 /* OVERLAY */
 .overlay {
